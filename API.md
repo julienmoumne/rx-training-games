@@ -1,6 +1,6 @@
 *Rx Training Games* provides a basic API for building games.
 
-The basic idea is to activate and clear squares of different colors in a graphical square grid :
+Squares of different colors are switched on and off in a graphical square grid :
 
 ![Grid Example](misc/grid-example.png)
 

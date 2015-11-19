@@ -89,16 +89,8 @@ Auto start can be prevented by appending `&preventstart=true` to the URL.
 
 ## GitHub Page
 
-[Rx Training Games](https://julienmoumne.github.io/rx-training-games) is published using
-[GitHub Pages](https://pages.github.com/) with the following steps :
- 
- 1. git checkout gh-pages
- 2. git merge master -m "Merge branch 'master' into gh-pages" 
- 3. [build for production](#how-to-build-and-run-the-code-locally)
- 4. git add -A
- 5. git commit -m 'publish rx-training-games'
- 6. git push
- 
+[Rx Training Games](https://julienmoumne.github.io/rx-training-games) is published as a
+[GitHub Page](https://pages.github.com/) using [build.sh](build.sh).
 
 ## Other Playgrounds
 
