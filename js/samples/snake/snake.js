@@ -1,4 +1,4 @@
-var snakeSpeedPulse = 30;
+var snakeSpeedPulse = 60;
 var squareSize = 15;
 
 api.initGrid(squareSize);
