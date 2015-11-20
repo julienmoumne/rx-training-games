@@ -1,1 +1,0 @@
-See [Embedded mode](../../#embedded-mode).
