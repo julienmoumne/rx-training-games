@@ -1,0 +1,31 @@
+{
+  "name": "rx-angular",
+  "version": "1.0.4",
+  "main": "dist/rx.angular.js",
+  "dependencies": {
+    "rxjs": "*"
+  },
+  "ignore": [
+    ".*",
+    "*.bat",
+    "*.md",
+    "*.txt",
+    "*.log",
+    "package.json",
+    "node_modules",
+    "doc",
+    "examples",
+    "src",
+    "tests"
+  ],
+  "homepage": "https://github.com/Reactive-Extensions/rx.angular.js",
+  "_release": "1.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.4",
+    "commit": "9722b0033356af3c9935897e4f5f7d50b8a1d312"
+  },
+  "_source": "git://github.com/Reactive-Extensions/rx.angular.js.git",
+  "_target": "1.0.4",
+  "_originalSource": "angular-rx"
+}

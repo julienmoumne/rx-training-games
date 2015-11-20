@@ -1,0 +1,27 @@
+{
+  "name": "octokat",
+  "version": "0.4.13",
+  "description": "Javascript GitHub client for NodeJS or a browser using promises or callbacks",
+  "main": "dist/octokat.js",
+  "dependencies": {},
+  "devDependencies": {
+    "blanket": "#development",
+    "mocha": "~2.2.5",
+    "requirejs": "~2.1.9",
+    "require-cs": "~0.4.4",
+    "coffee-script": ">=1.3"
+  },
+  "resolutions": {
+    "coffee-script": ">=1.3"
+  },
+  "homepage": "https://github.com/philschatz/octokat.js",
+  "_release": "0.4.13",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.13",
+    "commit": "572d9a648800b698004c3c3edaa4710192b23ec0"
+  },
+  "_source": "git://github.com/philschatz/octokat.js.git",
+  "_target": "0.4.13",
+  "_originalSource": "octokat"
+}

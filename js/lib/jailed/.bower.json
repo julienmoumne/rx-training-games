@@ -1,0 +1,14 @@
+{
+  "name": "jailed",
+  "homepage": "https://github.com/asvd/jailed",
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "182de35b5729557a1f2736d0bd6353959ee74de0"
+  },
+  "_source": "git://github.com/asvd/jailed.git",
+  "_target": "0.2.0",
+  "_originalSource": "jailed"
+}

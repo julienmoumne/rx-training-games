@@ -1,4 +1,4 @@
-js/lib/**
+#js/lib/**
 .idea
 *.iml
 node_modules
