@@ -85,4 +85,4 @@ var newCoord = api.directions[keyCode]({x: 42, y: 42});
 
 ## Contributing code samples
 
-Do you think you can invent games with these simple elements? See [how to contribute](README.md#how-to-contribute).
+Do you think you can invent games with these simple elements? See [how to contribute](../../#how-to-contribute).

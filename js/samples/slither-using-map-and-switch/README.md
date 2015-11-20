@@ -10,4 +10,4 @@ and
 
 Use the Left, Up, Right and Down arrows of your keyboard to move the snake.
 
-See [full diagram](js/samples/slither-using-map-and-switch/slither-using-map-and-switch.png).
+See [full diagram](https://raw.githubusercontent.com/JulienMoumne/rx-training-games/master/js/samples/slither-using-map-and-switch/slither-using-map-and-switch.png).

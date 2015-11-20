@@ -1,1 +1,1 @@
-[see](../#embedded-mode)
+See [Embedded mode](../../#embedded-mode).
