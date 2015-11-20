@@ -13,4 +13,4 @@ Use the Left, Up, Right and Down arrows of your keyboard to move the snake.
 
 Comment `distinctUntilChanged(_.first)` and keep one of the keys pressed to see how it affects the behavior of the snake.
 
-See [full diagram](js/samples/slither-using-combine-latest/slither-using-combine-latest.png).
+See [full diagram](https://raw.githubusercontent.com/JulienMoumne/rx-training-games/master/js/samples/slither-using-combine-latest/slither-using-combine-latest.png).
