@@ -3,6 +3,6 @@ js/lib/**
 *.iml
 node_modules
 npm-debug.log
-/index.html
-/dist/**
+#/index.html
+#/dist/**
 !.gitkeep
