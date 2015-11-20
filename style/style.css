@@ -1,0 +1,53 @@
+@import "../js/lib/angular-loading-bar/build/loading-bar.css";
+@import "../js/lib/angular-socialshare/angular-socialshare.css";
+@import "../js/lib/angular-growl-v2/build/angular-growl.css";
+@import "../js/lib/github-fork-ribbon-css/gh-fork-ribbon.css";
+@import "../js/lib/bootstrap/dist/css/bootstrap.css";
+@import "../js/lib/bootstrap/dist/css/bootstrap-theme.css";
+@import "../js/lib/codemirror/lib/codemirror.css";
+@import "../js/lib/codemirror/theme/elegant.css";
+
+.CodeMirror {
+    border: 1px solid #eee;
+    height: inherit;
+}
+
+.github-fork-ribbon {
+    background-color: #337ab7;
+}
+
+.logo {
+    vertical-align: baseline;
+}
+
+.logo-sm img {
+    width: 10px !important;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.built-using {
+    margin-top: 5px;
+}
+
+.error-message {
+    margin-top: 10px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+div:focus{
+    outline: 0;
+}
+
+.tab-content {
+    margin-top: 2px;
+}
+
+.grid-canvas {
+    border: 1px solid #eee;
+}

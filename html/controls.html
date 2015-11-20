@@ -1,0 +1,25 @@
+<div class="controls">
+    <span ng-show="on">
+        <span class="label label-primary">Engine On</span>
+        <button type="button" class="btn btn-default btn-xs" ng-click="stop()">
+            <span class="glyphicon glyphicon-stop"></span> Stop
+        </button>
+        <span>or, hit 'Escape'.</span>
+    </span>
+
+    <span ng-hide="on">
+        <span class="label label-primary">Engine Off</span>
+        <button type="button" class="btn btn-default btn-xs" ng-click="start()">
+            <span class="glyphicon glyphicon-play"></span> Start
+        </button>
+        <span>or, hit 'Ctrl + Return'.</span>
+    </span>
+
+    <div ng-show="error" class="error-message">
+        <div class="text-center alert alert-info" role="alert">
+            <p>The following error occurred : </p>
+            <p><strong>{{ error }}</strong></p>
+            <p><em>You can consult the stacktrace in your browser console for more details.</em></p>
+        </div>
+    </div>
+</div>

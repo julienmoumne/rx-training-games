@@ -1,0 +1,29 @@
+{
+  "name": "rx-training-games",
+  "dependencies": {
+    "requirejs": "2.1.21",
+    "requirejs-text": "2.0.14",
+    "angular": "1.4.8",
+    "angular-route": "1.4.8",
+    "angular-bootstrap": "0.14.3",
+    "angular-ui-codemirror": "0.3.0",
+    "angular-local-storage": "0.2.3",
+    "angular-loading-bar": "0.8.0",
+    "angular-socialshare": "1.4.4",
+    "angular-growl-v2": "0.7.9",
+    "bootstrap": "3.3.5",
+    "rxjs": "4.0.7",
+    "angular-rx": "1.0.4",
+    "jailed": "0.2.0",
+    "underscore": "1.8.3",
+    "ng-showdown": "https://github.com/showdownjs/ng-showdown.git#b1de46b0f39cee0770761a4ed7dde7245b9dae37",
+    "octokat": "0.4.13",
+    "moment": "2.10.6",
+    "github-fork-ribbon-css": "0.1.1",
+    "twitter": "http://platform.twitter.com/widgets.js",
+    "chance": "0.8.0",
+    "ejs" : "1.0.0",
+    "angulartics" : "0.20.2",
+    "domReady" : "2.0.1"
+  }
+}

@@ -1,0 +1,9 @@
+<div ng-style="editorStyle()" ui-codemirror="{ onLoad : codemirrorLoaded }"></div>
+
+<small ng-show="embedded" class="built-using pull-right">
+    <em>
+        Built using
+        <ng-include class="logo-sm" src="'html/logo.html'"></ng-include>
+        <a title="Rx Training Games" href="{{ currentSample.link }}">Rx Training Games</a>
+    </em>
+</small>

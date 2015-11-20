@@ -1,0 +1,64 @@
+var squareSize = 15;
+var spawnPulse = 1000;
+var fallPulse = 200;
+var firingPulse = 50;
+
+api.initGrid(squareSize);
+
+var meteoriteLayer = api.addLayer('#275b8c');
+var bulletLayer = api.addLayer('#9bc2e3');
+var spaceshipLayer = api.addLayer('#337ab7');
+
+// ship starting position
+spaceshipLayer.fill({x: api.randomCoord(), y: api.gameSize - 1});
+
+// meteorite spawns
+Rx.Observable.interval(spawnPulse)
+    .map(() => ({x: api.randomCoord(), y: 0}))
+    .subscribe(meteoriteLayer.fill);
+
+// meteorite updates
+Rx.Observable.interval(fallPulse)
+    .flatMap(() => Rx.Observable.from(meteoriteLayer.getActiveSquares()))
+    .do(meteoriteLayer.clear)
+    .map(api.directions.Down)
+    .do(meteoriteLayer.fill)
+    .where(api.isOffLimits)
+    .subscribe(api.gameOver);
+
+// bullet spawns
+api.keyboard.filter(keyCode => keyCode == 32)
+    .map(() => spaceshipLayer.getActiveSquares()[0])
+    .subscribe(bulletLayer.fill);
+
+// bullet updates
+Rx.Observable.interval(firingPulse)
+    .flatMap(() => Rx.Observable.from(bulletLayer.getActiveSquares()))
+    .do(bulletLayer.clear)
+    .map(api.directions.Up)
+    .where(api.isWithinLimits)
+    .subscribe(bulletLayer.fill);
+
+// spaceship moves
+api.keyboard.filter(keyCode => _.contains([37, 39], keyCode))
+    .map(key => api.directions[key](spaceshipLayer.getActiveSquares()[0]))
+    .filter(api.isWithinLimits)
+    .do(spaceshipLayer.fill)
+    .subscribe(() => spaceshipLayer.clear(spaceshipLayer.getActiveSquares()[0]));
+
+// hit detection
+var hit = bulletLayer.activations
+    .map(bullet => ({
+        bullet: bullet,
+        meteorite: meteoriteLayer.getActiveSquares()
+            .find(meteorite => meteorite.x == bullet.x && meteorite.y >= bullet.y)
+    }))
+    .filter(hit => hit.meteorite);
+
+// asset destruction & scoring
+var score = 1;
+hit.subscribe(hit => {
+    api.setText('Score : ' + score++);
+    meteoriteLayer.clear(hit.meteorite);
+    bulletLayer.clear(hit.bullet);
+});

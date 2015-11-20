@@ -1,0 +1,51 @@
+{
+  "name": "rx-training-games",
+  "license": "GPL v3",
+  "description": "Rx Training Games - learn and practice Reactive Extensions coding grid-based games",
+  "homepage": "https://github.com/JulienMoumne/rx-training-games",
+  "bugs": "https://github.com/JulienMoumne/rx-training-games/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JulienMoumne/rx-training-games.git"
+  },
+  "devDependencies": {
+    "bower": "latest",
+    "jshint": "latest",
+    "serve": "latest",
+    "ejs-cli": "latest",
+    "npm-html2js": "latest",
+    "requirejs": "2.1.21"
+  },
+  "scripts": {
+    "lint": "jshint js",
+
+    "clean:index": "rm -f index.html",
+    "clean:bower": "rm -rf js/lib/*",
+    "clean:dist": "rm -rf dist/*",
+    "clean": "npm run clean:index && npm run clean:bower && npm run clean:dist",
+
+    "build:bower" : "bower install",
+
+    "build:index:dev" : "ejs-cli html/index.ejs --options '{\"devMode\" : true}' > index.html",
+    "build:index:prod" : "ejs-cli html/index.ejs --options '{\"devMode\" : false}' > index.html",
+
+    "build:js:app:templates" : "npm-html2js -i 'html/**/*.html' -o 'dist/templates.js' -m 'rx-training-games.templates'",
+    "build:js:app:deps": "r.js -o js/build/app.build.js",
+    "build:js:app": "npm run build:js:app:templates && npm run build:js:app:deps",
+    "build:js:runtime": "r.js -o js/build/runtime.build.js",
+    "build:js": "npm run build:js:app && npm run build:js:runtime",
+
+    "build:style": "r.js -o js/build/style.build.js",
+    "build:assets": "npm run build:js && npm run build:style",
+
+    "build:dev": "npm run build:bower && npm run build:index:dev",
+    "build:prod": "npm run clean && npm run lint && npm run build:index:prod && npm run build:bower && npm run build:assets",
+
+    "start:server:dev" : "serve -f favicon.ico",
+    "start:server:prod" : "serve --compress -f favicon.ico",
+    "start:dev" : "npm run build:dev && npm run start:server:dev",
+    "start:prod" : "npm run build:prod && npm run start:server:prod",
+
+    "start" : "npm run start:dev"
+  }
+}

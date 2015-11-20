@@ -1,0 +1,34 @@
+<div growl></div>
+
+<div ng-keydown="keypress($event)" tabindex="0">
+
+    <span ng-hide="embedded">
+        <ng-include src="'html/title.html'"></ng-include>
+    </span>
+
+    <div class="row">
+
+        <div class="col-md-3" ng-hide="embedded">
+
+            <ng-include src="'html/samples-title.html'"></ng-include>
+            <ng-include src="'html/samples.html'"></ng-include>
+            <ng-include src="'html/import-gist.html'"></ng-include>
+        </div>
+
+        <div ng-class="embedded ? 'col-xs-4' : 'col-md-3'">
+
+            <div class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>
+            <ng-include src="'html/controls.html'"></ng-include>
+        </div>
+
+        <div ng-class="embedded ? 'col-xs-8' : 'col-md-6'">
+            <ng-include src="'html/editor.html'"></ng-include>
+        </div>
+    </div>
+
+    <div ng-hide="embedded" class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/JulienMoumne/rx-training-games">Fork me on GitHub</a>
+        </div>
+    </div>
+</div>

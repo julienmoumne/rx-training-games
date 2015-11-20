@@ -1,0 +1,8 @@
+js/lib/**
+.idea
+*.iml
+node_modules
+npm-debug.log
+/index.html
+/dist/**
+!.gitkeep

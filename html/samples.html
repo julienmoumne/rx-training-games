@@ -1,0 +1,27 @@
+<uib-tabset>
+
+    <uib-tab
+             ng-hide="category.title === draftCategory && !hasDraft"
+             ng-repeat="category in categories"
+             active="category.active"
+             ng-click="selectCategory(category)">
+
+         <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>
+
+        <uib-accordion vertical="true">
+
+            <uib-accordion-group ng-repeat="sample in samples | filter : {category: category.title}"
+                                 is-disabled="sample.active"
+                                 is-open="sample.active"
+                                 ng-click="selectSample(sample)">
+
+                <uib-accordion-heading>
+                    <ng-include src="'html/sample-heading.html'"></ng-include>
+                </uib-accordion-heading>
+
+                <ng-include src="'html/sample-body.html'"></ng-include>
+
+            </uib-accordion-group>
+        </uib-accordion>
+    </uib-tab>
+</uib-tabset>

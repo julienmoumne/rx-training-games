@@ -1,0 +1,44 @@
+<div ng-click="$event.stopPropagation()">
+
+    <p markdown-to-html="sample.description"></p>
+
+    <a twitter
+       ng-if="sample.active"
+       ng-show="!sample.local || sample.gist"
+       class="pull-right"
+       data-count='none'
+       data-url='{{ sample.link }}'
+       data-text='Check out some Rx in action at '></a>
+
+    <div ng-hide="sample.local">
+        <a class="pull-left" href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">
+            <strong>Authors</strong>
+        </a>
+    </div>
+
+    <div ng-show="sample.local">
+
+        <hr/>
+
+        <p ng-hide="sample.gist">
+            <em>
+                You can
+                <ng-include src="'html/github-export.html'"></ng-include>
+                your work on GitHub Gist. This will allow you to save it on the cloud and share it with
+                others.
+            </em>
+        </p>
+        <p ng-show="sample.gist">
+            <em>
+                Saved on
+                <a title="GitHub Gist Link"
+                   ng-href="{{'https://gist.github.com/anonymous/' + sample.gist}}">GitHub Gist</a>
+                {{sample.gistUploadDate | moment}}.
+                <br/>
+                You can
+                <ng-include src="'html/github-export.html'"></ng-include>
+                it again if you have made modifications since.
+            </em>
+        </p>
+    </div>
+</div>
