@@ -123,12 +123,16 @@ angular.module('rx-training-games.templates', [])
     '</span>\n' +
     '')
   $templateCache.put('html/samples-title.html',
-    '<div>\n' +
-    '    <p class="text-center">\n' +
-    '        Fiddle with the samples bellow, then\n' +
-    '        <a href ng-click="startNewSample()">\n' +
-    '            <strong>try your own idea.</strong>\n' +
-    '        </a>\n' +
+    '<div class="text-center">\n' +
+    '    <p>\n' +
+    '        Fiddle with the samples bellow then <strong>start coding</strong>\n' +
+    '        <a href ng-click="startNewSample()" title="Try your idea by creating a new Draft"><span class="glyphicon glyphicon-plus-sign"></span></a>\n' +
+    '    </p>\n' +
+    '    <p>\n' +
+    '        <strong>\n' +
+    '            <a href="https://github.com/JulienMoumne/rx-training-games/blob/master/README.md">README</a>\n' +
+    '        </strong>\n' +
+    '        for more details on the goals of this project.\n' +
     '    </p>\n' +
     '</div>')
   $templateCache.put('html/samples.html',
@@ -165,7 +169,6 @@ angular.module('rx-training-games.templates', [])
     '    <a href="https://github.com/JulienMoumne/rx-training-games">Rx Training Games</a>\n' +
     '    <small>\n' +
     '        learn and practice <a href="http://reactivex.io/">Reactive Extensions</a> coding grid-based games\n' +
-    '        <a href="https://github.com/JulienMoumne/rx-training-games" title="Project Documentation"><span class="glyphicon glyphicon-info-sign"></span></a>\n' +
     '    </small>\n' +
     '</h1>\n' +
     '<hr>\n' +
