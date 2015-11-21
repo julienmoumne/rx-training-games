@@ -103,7 +103,7 @@ angular.module('rx-training-games.templates', [])
     '</div>')
   $templateCache.put('html/sample-heading.html',
     '<span>\n' +
-    '    {{ sample.title }} <small><em>{{sample.category}}</em></small>\n' +
+    '    {{ sample.title }}\n' +
     '</span>\n' +
     '\n' +
     '<span ng-click="$event.stopPropagation();" class="pull-right">\n' +
