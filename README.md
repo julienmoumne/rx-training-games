@@ -90,7 +90,7 @@ Auto start can be prevented by appending `&preventstart=true` to the URL.
 ## GitHub Page
 
 [Rx Training Games](https://julienmoumne.github.io/rx-training-games) is published as a
-[GitHub Page](https://pages.github.com/) using [build.sh](build.sh).
+[GitHub Page](https://pages.github.com/) using [publish.sh](publish.sh).
 
 ## Other Playgrounds
 

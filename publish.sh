@@ -6,3 +6,4 @@ npm run build:prod
 git add -A
 git commit -m 'publish rx-training-games'
 git push
+git checkout master
