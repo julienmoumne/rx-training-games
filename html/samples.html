@@ -1,12 +1,12 @@
 <uib-tabset>
 
     <uib-tab
-             ng-hide="category.title === draftCategory && !hasDraft"
-             ng-repeat="category in categories"
-             active="category.active"
-             ng-click="selectCategory(category)">
+            ng-hide="category.title === draftCategory && !hasDraft"
+            ng-repeat="category in categories"
+            active="category.active"
+            ng-click="selectCategory(category)">
 
-         <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>
+        <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>
 
         <uib-accordion vertical="true">
 
@@ -26,10 +26,10 @@
     </uib-tab>
 
     <uib-tab
-            ng-hide="hasDraft"
             ng-click="startNewSample()">
         <uib-tab-heading>
-             new draft
+            <span ng-hide="hasDraft"><em>create a new draft</em></span>
+            <span ng-show="hasDraft" class="glyphicon glyphicon-plus"></span>
         </uib-tab-heading>
     </uib-tab>
 </uib-tabset>

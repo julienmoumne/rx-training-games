@@ -51,3 +51,7 @@ div:focus{
 .grid-canvas {
     border: 1px solid #eee;
 }
+
+.nav > li > a {
+    padding: 10px 5px;
+}
