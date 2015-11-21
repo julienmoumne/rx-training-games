@@ -133,12 +133,12 @@ angular.module('rx-training-games.templates', [])
     '<uib-tabset>\n' +
     '\n' +
     '    <uib-tab\n' +
-    '             ng-hide="category.title === draftCategory && !hasDraft"\n' +
-    '             ng-repeat="category in categories"\n' +
-    '             active="category.active"\n' +
-    '             ng-click="selectCategory(category)">\n' +
+    '            ng-hide="category.title === draftCategory && !hasDraft"\n' +
+    '            ng-repeat="category in categories"\n' +
+    '            active="category.active"\n' +
+    '            ng-click="selectCategory(category)">\n' +
     '\n' +
-    '         <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>\n' +
+    '        <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>\n' +
     '\n' +
     '        <uib-accordion vertical="true">\n' +
     '\n' +
@@ -158,10 +158,10 @@ angular.module('rx-training-games.templates', [])
     '    </uib-tab>\n' +
     '\n' +
     '    <uib-tab\n' +
-    '            ng-hide="hasDraft"\n' +
     '            ng-click="startNewSample()">\n' +
     '        <uib-tab-heading>\n' +
-    '             new draft\n' +
+    '            <span ng-hide="hasDraft"><em>create a new draft</em></span>\n' +
+    '            <span ng-show="hasDraft" class="glyphicon glyphicon-plus"></span>\n' +
     '        </uib-tab-heading>\n' +
     '    </uib-tab>\n' +
     '</uib-tabset>')
