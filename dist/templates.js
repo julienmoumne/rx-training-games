@@ -125,14 +125,8 @@ angular.module('rx-training-games.templates', [])
   $templateCache.put('html/samples-title.html',
     '<div class="text-center">\n' +
     '    <p>\n' +
-    '        Fiddle with the samples bellow then <strong>start coding</strong>\n' +
-    '        <a href ng-click="startNewSample()" title="Try your idea by creating a new Draft"><span class="glyphicon glyphicon-plus-sign"></span></a>\n' +
-    '    </p>\n' +
-    '    <p>\n' +
-    '        <strong>\n' +
-    '            <a href="https://github.com/JulienMoumne/rx-training-games/blob/master/README.md">README</a>\n' +
-    '        </strong>\n' +
-    '        for more details on the goals of this project.\n' +
+    '        Fiddle with the samples bellow then\n' +
+    '        <a href="https://github.com/JulienMoumne/rx-training-games/blob/master/README.md">learn about the project</a>.\n' +
     '    </p>\n' +
     '</div>')
   $templateCache.put('html/samples.html',
@@ -161,6 +155,14 @@ angular.module('rx-training-games.templates', [])
     '\n' +
     '            </uib-accordion-group>\n' +
     '        </uib-accordion>\n' +
+    '    </uib-tab>\n' +
+    '\n' +
+    '    <uib-tab\n' +
+    '            ng-hide="hasDraft"\n' +
+    '            ng-click="startNewSample()">\n' +
+    '        <uib-tab-heading>\n' +
+    '             new draft\n' +
+    '        </uib-tab-heading>\n' +
     '    </uib-tab>\n' +
     '</uib-tabset>')
   $templateCache.put('html/title.html',
