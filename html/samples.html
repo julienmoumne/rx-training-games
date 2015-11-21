@@ -24,4 +24,12 @@
             </uib-accordion-group>
         </uib-accordion>
     </uib-tab>
+
+    <uib-tab
+            ng-hide="hasDraft"
+            ng-click="startNewSample()">
+        <uib-tab-heading>
+             new draft
+        </uib-tab-heading>
+    </uib-tab>
 </uib-tabset>
