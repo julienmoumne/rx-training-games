@@ -1,4 +1,4 @@
-This work is saved in your browser's [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+This draft is saved in your browser's [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
 
 You can use the *Export to GitHub Gist* link located in the footer to save and share your work on the cloud.
 
