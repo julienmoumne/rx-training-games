@@ -160,7 +160,7 @@ angular.module('rx-training-games.templates', [])
     '    <uib-tab\n' +
     '            ng-click="startNewSample()">\n' +
     '        <uib-tab-heading>\n' +
-    '            <span ng-hide="hasDraft"><em>create a new draft</em></span>\n' +
+    '            <span ng-hide="hasDraft"><em>develop your idea</em></span>\n' +
     '            <span ng-show="hasDraft" class="glyphicon glyphicon-plus"></span>\n' +
     '        </uib-tab-heading>\n' +
     '    </uib-tab>\n' +
