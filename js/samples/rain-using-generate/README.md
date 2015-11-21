@@ -3,7 +3,7 @@ This snippet makes particles fall from the sky as in the
 
 This approach leverages the
 [GenerateWithAbsoluteTime Operator](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/generatewithabsolutetime.md)
-and does not rely on on shared state.
+and does not rely on shared state.
 
 It revolves around the following structure : 
 ```javascript
