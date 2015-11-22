@@ -5,8 +5,8 @@ See it in action [here](https://julienmoumne.github.io/rx-training-games).
 
 The project ambitions are to :
 
- * provide a way of learning a new technology while having fun - with as little hardware and software requirements as possible
- * demonstrate how leveraging current technology enables us to easily build such training platforms  
+ * offer a way to learn new technology while having fun - with as little hardware and software requirements as possible
+ * demonstrate how leveraging current technology makes it easy to build such training platforms
 
 The idea came out of several sources of inspiration :
  
