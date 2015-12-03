@@ -11,13 +11,13 @@ var validKeystrokes = api.keyboard.where(keyCode => keyCode in api.directions);
 
 var pulse = Rx.Observable
     .interval(snakeSpeedPulse)
-    .skipUntil(validKeystrokes);
+    .skipUntil(validKeystrokes); // see rxmarbles.com/#skipUntil
 
 // duplicate the last keystroke at fixed intervals
 var directions = Rx.Observable
-    .combineLatest(pulse, validKeystrokes)
-    .distinctUntilChanged(_.first)
-    .map(_.last);
+    .combineLatest(pulse, validKeystrokes) // see rxmarbles.com/#combineLatest
+    .distinctUntilChanged(_.first) // see rxmarbles.com/#distinctUntilChanged
+    .map(_.last); // see rxmarbles.com/#map
 
 // move the snake
 directions

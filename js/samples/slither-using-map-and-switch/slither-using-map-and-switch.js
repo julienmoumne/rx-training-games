@@ -15,12 +15,12 @@ var pulse = Rx.Observable
 
 // duplicate the last keystroke at fixed intervals
 var directions = validKeystrokes
-    .map(key => pulse.map(key))
+    .map(key => pulse.map(key)) // see rxmarbles.com/#map
     .switch();
 
 // move the snake
 directions
     .map(key => api.directions[key](snake.getActiveSquares()[2]))
-    .where(api.isWithinLimits)
+    .where(api.isWithinLimits) // see rxmarbles.com/#filter
     .do(snake.fill)
     .subscribe(() => snake.clear(snake.getActiveSquares()[0]));

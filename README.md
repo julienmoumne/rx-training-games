@@ -102,6 +102,7 @@ Here is a list of projects that have goals in common with *Rx Training Games* :
  * [xgrommx.github.io/rx-book](http://xgrommx.github.io/rx-book) a book on RxJS with live examples built on top of [JS Bin](https://jsbin.com)
  * [www.typescriptlang.org/Playground](http://www.typescriptlang.org/Playground) a TypeScript playground
  * [www.playmycode.com](http://www.playmycode.com) an online platform for building, playing and sharing browser games
+ * [RxMarbles](http://rxmarbles.com/) a list of interactive diagrams of Rx Observables
 
 ## License
 

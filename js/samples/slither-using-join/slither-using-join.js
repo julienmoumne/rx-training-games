@@ -21,7 +21,6 @@ var directions = pulse.join(
 
 // move the snake
 directions
-    .do(e=>console.log(e))
     .map(key => api.directions[key](snake.getActiveSquares()[2]))
     .where(api.isWithinLimits)
     .do(snake.fill)
