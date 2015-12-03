@@ -4,8 +4,16 @@ You can use the *Export to GitHub Gist* link located in the footer to save and s
 
 Please consider improving this project by [submitting](https://github.com/JulienMoumne/rx-training-games#how-to-contribute) your code sample.
 
-Several methods have been made available to interact with the grid.
-See the [API documentation](https://github.com/JulienMoumne/rx-training-games/blob/master/API.md) for more details.
+Checkout the [API](https://github.com/JulienMoumne/rx-training-games/blob/master/API.md)
+to learn how to control the graphical grid.
+
+Developing using Reactive Extensions is possible in JavaScript thanks to
+[RxJS](https://github.com/Reactive-Extensions/RxJS/tree/master/doc).
+
+Features of
+[Underscore](http://underscorejs.org/) and
+[ECMAScript 6](http://www.ecma-international.org/ecma-262/6.0/)
+as used in the samples are suggested to make your code more concise.
 
 If you prefer coding using your own editor you can
 [build and run the code locally](https://github.com/JulienMoumne/rx-training-games#how-to-build-and-run-the-code-locally).

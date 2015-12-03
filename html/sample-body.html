@@ -11,15 +11,14 @@
        data-text='Check out some Rx in action at '></a>
 
     <div ng-hide="sample.local">
-        <a class="pull-left" href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">
+        <a  href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">
             <strong>Authors</strong>
         </a>
     </div>
 
+    <hr/>
+
     <div ng-show="sample.local">
-
-        <hr/>
-
         <p ng-hide="sample.gist">
             <em>
                 You can
@@ -41,4 +40,6 @@
             </em>
         </p>
     </div>
+
+    <ng-include ng-hide="sample.local" src="'html/built-on.html'"></ng-include>
 </div>

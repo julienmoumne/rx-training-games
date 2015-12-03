@@ -21,7 +21,7 @@ var coordinates = (function* () {
 // with Rx.Observable.from([generator])
 // this is because rxjs does not support reactive pull without buffering
 var droplets = Rx.Observable.interval(spawnPulse)
-    .map(coordinates)
+    .map(coordinates) // see rxmarbles.com/#map
     .flatMap(coord => Rx.Observable.interval(fallPulse)
         .map(() => coord.next())
         .takeWhile(e => !e.done)

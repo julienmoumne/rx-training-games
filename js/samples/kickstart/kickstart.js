@@ -17,12 +17,12 @@ var layer = api.addLayer('#337ab7');
 
 layer.fill(api.randomSquare());
 
-var arrowKeys = api.keyboard.filter(keyCode => keyCode in api.directions);
+var arrowKeys = api.keyboard.where(keyCode => keyCode in api.directions);
 
 arrowKeys
     .do(key => console.log(key))
     .map(key => api.directions[key](layer.getActiveSquares()[0]))
-    .filter(api.isWithinLimits)
+    .where(api.isWithinLimits)
     .do(coord => api.setText(coord.x + ' ' + coord.y))
     .do(layer.fill)
     .subscribe(() => layer.clear(layer.getActiveSquares()[0]));

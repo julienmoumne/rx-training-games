@@ -5,8 +5,8 @@ See it in action [here](https://julienmoumne.github.io/rx-training-games).
 
 The project ambitions are to :
 
- * provide a way of learning a new technology while having fun - with as little hardware and software requirements as possible
- * demonstrate how leveraging current technology enables us to easily build such training platforms  
+ * offer a way to learn new technology while having fun - with as little hardware and software requirements as possible
+ * demonstrate how leveraging current technology makes it easy to build such training platforms
 
 The idea came out of several sources of inspiration :
  
@@ -82,7 +82,8 @@ Code samples can be embedded in web pages using an iframe :
 </iframe>
 ```
 
-See [embedded mode demo](https://julienmoumne.github.io/rx-training-games/embedded-demo).
+See [embedded mode demo](https://julienmoumne.github.io/rx-training-games/embedded-demo) and
+[Introducing Rx Training Games](http://techblog.moumne.com/2015/11/22/introducing-rx-training-games/).
 
 Auto start can be prevented by appending `&preventstart=true` to the URL.
 
@@ -101,6 +102,7 @@ Here is a list of projects that have goals in common with *Rx Training Games* :
  * [xgrommx.github.io/rx-book](http://xgrommx.github.io/rx-book) a book on RxJS with live examples built on top of [JS Bin](https://jsbin.com)
  * [www.typescriptlang.org/Playground](http://www.typescriptlang.org/Playground) a TypeScript playground
  * [www.playmycode.com](http://www.playmycode.com) an online platform for building, playing and sharing browser games
+ * [RxMarbles](http://rxmarbles.com/) a list of interactive diagrams of Rx Observables
 
 ## License
 
