@@ -27,7 +27,7 @@ Rx.Observable.interval(fallPulse)
     .subscribe(api.gameOver);
 
 // bullet spawns
-api.keyboard.filter(keyCode => keyCode == 32)
+api.keyboard.where(keyCode => keyCode == 32)
     .map(() => spaceshipLayer.getActiveSquares()[0])
     .subscribe(bulletLayer.fill);
 
@@ -40,9 +40,9 @@ Rx.Observable.interval(firingPulse)
     .subscribe(bulletLayer.fill);
 
 // spaceship moves
-api.keyboard.filter(keyCode => _.contains([37, 39], keyCode))
+api.keyboard.where(keyCode => _.contains([37, 39], keyCode))
     .map(key => api.directions[key](spaceshipLayer.getActiveSquares()[0]))
-    .filter(api.isWithinLimits)
+    .where(api.isWithinLimits)
     .do(spaceshipLayer.fill)
     .subscribe(() => spaceshipLayer.clear(spaceshipLayer.getActiveSquares()[0]));
 
@@ -53,7 +53,7 @@ var hit = bulletLayer.activations
         meteorite: meteoriteLayer.getActiveSquares()
             .find(meteorite => meteorite.x == bullet.x && meteorite.y >= bullet.y)
     }))
-    .filter(hit => hit.meteorite);
+    .where(hit => hit.meteorite);
 
 // asset destruction & scoring
 var score = 1;

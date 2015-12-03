@@ -9,14 +9,14 @@ var food = api.addLayer('#9bc2e3');
 snake.fill({x: 1, y: 0}).fill({x: 1, y: 1}); // snake starting point
 
 // duplicate the last direction at fixed intervals
-var validKeystrokes = api.keyboard.filter(keyCode => keyCode in api.directions);
+var validKeystrokes = api.keyboard.where(keyCode => keyCode in api.directions);
 var directions = Rx.Observable
     .interval(snakeSpeedPulse)
     .withLatestFrom(validKeystrokes, (p, k) => k);
 
 // detect snake-food collisions
 var eaten = food.activations
-    .flatMapLatest(foodCoord => snake.activations.filter(_.matcher(foodCoord)));
+    .flatMapLatest(foodCoord => snake.activations.where(_.matcher(foodCoord)));
 
 // add flag 'grow: true' when snake should grow
 var updates = directions
