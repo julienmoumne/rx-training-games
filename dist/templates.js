@@ -1,6 +1,17 @@
 angular.module('rx-training-games.templates', [])
   .run(['$templateCache', function($templateCache) {
-    $templateCache.put('html/controls.html',
+    $templateCache.put('html/built-on.html',
+    '<p>\n' +
+    '    <em>\n' +
+    '        Built on\n' +
+    '\n' +
+    '        <a href="https://github.com/JulienMoumne/rx-training-games/blob/master/API.md">RxTG API</a>,\n' +
+    '        <a href="https://github.com/Reactive-Extensions/RxJS/tree/master/doc">RxJS</a>,\n' +
+    '        <a href="http://underscorejs.org/">Underscore</a> and\n' +
+    '        <a href="http://www.ecma-international.org/ecma-262/6.0/">ECMAScript 6</a>\n' +
+    '    </em>\n' +
+    '</p>')
+  $templateCache.put('html/controls.html',
     '<div class="controls">\n' +
     '    <span ng-show="on">\n' +
     '        <span class="label label-primary">Engine On</span>\n' +
@@ -70,15 +81,14 @@ angular.module('rx-training-games.templates', [])
     '       data-text=\'Check out some Rx in action at \'></a>\n' +
     '\n' +
     '    <div ng-hide="sample.local">\n' +
-    '        <a class="pull-left" href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">\n' +
+    '        <a  href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">\n' +
     '            <strong>Authors</strong>\n' +
     '        </a>\n' +
     '    </div>\n' +
     '\n' +
+    '    <hr/>\n' +
+    '\n' +
     '    <div ng-show="sample.local">\n' +
-    '\n' +
-    '        <hr/>\n' +
-    '\n' +
     '        <p ng-hide="sample.gist">\n' +
     '            <em>\n' +
     '                You can\n' +
@@ -100,6 +110,8 @@ angular.module('rx-training-games.templates', [])
     '            </em>\n' +
     '        </p>\n' +
     '    </div>\n' +
+    '\n' +
+    '    <ng-include ng-hide="sample.local" src="\'html/built-on.html\'"></ng-include>\n' +
     '</div>')
   $templateCache.put('html/sample-heading.html',
     '<span>\n' +
