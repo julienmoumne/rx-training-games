@@ -1,10 +1,9 @@
-var squareSize = 6;
 var spawnPulse = 200;
 var fallPulse = 100;
 
-api.initGrid(squareSize);
+api.initGrid({squareSize: 6});
 
-var layer = api.addLayer('#337ab7');
+var layer = api.addLayer({color: '#337ab7'});
 
 var droplets = Rx.Observable.interval(spawnPulse)
     .flatMap(() => Rx.Observable.generateWithRelativeTime(
