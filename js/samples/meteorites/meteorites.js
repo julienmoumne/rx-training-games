@@ -1,13 +1,12 @@
-var squareSize = 15;
 var spawnPulse = 1000;
 var fallPulse = 200;
 var firingPulse = 50;
 
-api.initGrid(squareSize);
+api.initGrid({squareSize: 15});
 
-var meteoriteLayer = api.addLayer('#275b8c');
-var bulletLayer = api.addLayer('#9bc2e3');
-var spaceshipLayer = api.addLayer('#337ab7');
+var meteoriteLayer = api.addLayer({color: '#275b8c'});
+var bulletLayer = api.addLayer({color: '#9bc2e3'});
+var spaceshipLayer = api.addLayer({color: '#337ab7'});
 
 // ship starting position
 spaceshipLayer.fill({x: api.randomCoord(), y: api.gameSize - 1});
@@ -58,7 +57,7 @@ var hit = bulletLayer.activations
 // asset destruction & scoring
 var score = 1;
 hit.subscribe(hit => {
-    api.setText('Score : ' + score++);
+    api.setText({text: 'Score : ' + score++});
     meteoriteLayer.clear(hit.meteorite);
     bulletLayer.clear(hit.bullet);
 });

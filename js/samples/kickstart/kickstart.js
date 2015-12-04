@@ -9,11 +9,9 @@
  * You can test it using the arrow keys of your keyboard.
  */
 
-var squareSize = 15;
+api.initGrid({squareSize: 15});
 
-api.initGrid(squareSize);
-
-var layer = api.addLayer('#337ab7');
+var layer = api.addLayer({color: '#337ab7'});
 
 layer.fill(api.randomSquare());
 
@@ -23,6 +21,6 @@ arrowKeys
     .do(key => console.log(key))
     .map(key => api.directions[key](layer.getActiveSquares()[0]))
     .where(api.isWithinLimits)
-    .do(coord => api.setText(coord.x + ' ' + coord.y))
+    .do(coord => api.setText({text: coord.x + ' ' + coord.y}))
     .do(layer.fill)
     .subscribe(() => layer.clear(layer.getActiveSquares()[0]));

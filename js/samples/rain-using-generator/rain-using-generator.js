@@ -1,10 +1,9 @@
-var squareSize = 6;
 var spawnPulse = 200;
 var fallPulse = 100;
 
-api.initGrid(squareSize);
+api.initGrid({squareSize: 6});
 
-var layer = api.addLayer('#337ab7');
+var layer = api.addLayer({color: '#337ab7'});
 
 var coordinates = (function* () {
     var coord = {current: {x: api.randomCoord(), y: 0}};

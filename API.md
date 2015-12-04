@@ -4,11 +4,11 @@ Squares of different colors are switched on and off in a graphical square grid :
 
 ![Grid Example](misc/grid-example.png)
 
-The grid is first instantiated with the size of the activable squares : `api.initGrid(15);`
+The grid is first instantiated with the size of the activable squares : `api.initGrid({squareSize: 15});`
 
 ## Layers
 
-Multiple layers with different colors can be added with `var layer = api.addLayer('#337ab7');`
+Multiple layers with different colors can be added with `var layer = api.addLayer({color: '#337ab7'});`
 
 A layer exposes the following methods :
 
@@ -66,16 +66,17 @@ var directionKeys = api.keyboard.filter(keyCode =>
 *Update coordinates* :
 
 ```javascript
+// using key identifier
 var newCoord = api.directions.Up({x: 42, y: 42});
 
-var keyCode = '38';
-var newCoord = api.directions[keyCode]({x: 42, y: 42});
+// using key code
+var newCoord = api.directions['38']({x: 42, y: 42});
 ```
 
 ## Miscellaneous methods
 
  * `api.gameSize()` : return the number of rows/columns
- * `api.setText('Score : 42')` : display text in the grid
+ * `api.setText({text: 'Score : 42'})` : display text in the grid
  * `api.randomSquare()` : generate random valid xy coordinates (`{x: ?, y: ?}`) 
  * `api.randomCoord()` : generate a random valid coordinate (`{x: api.randomCoord(), y: 42}`)
  * `api.isOffLimits({x: 42, y: 42})` : return true if xy coordinates fall outside the grid
