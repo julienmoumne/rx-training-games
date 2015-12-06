@@ -38,7 +38,7 @@ angular.module('rx-training-games.templates', [])
     '    </div>\n' +
     '</div>')
   $templateCache.put('html/editor.html',
-    '<div ng-style="editorStyle()" ui-codemirror="{ onLoad : codemirrorLoaded }"></div>\n' +
+    '<div ui-codemirror="{ onLoad : codemirrorLoaded }"></div>\n' +
     '\n' +
     '<small ng-show="embedded" class="built-using pull-right">\n' +
     '    <em>\n' +
@@ -205,7 +205,7 @@ angular.module('rx-training-games.templates', [])
     '\n' +
     '        <div ng-class="embedded ? \'col-xs-4\' : \'col-md-3\'">\n' +
     '\n' +
-    '            <div class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>\n' +
+    '            <div ng-if="editorLoaded" class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>\n' +
     '            <ng-include src="\'html/controls.html\'"></ng-include>\n' +
     '        </div>\n' +
     '\n' +
