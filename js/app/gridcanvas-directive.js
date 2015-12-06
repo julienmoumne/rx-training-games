@@ -15,7 +15,7 @@ define(['runtime/gridcanvas'], GridCanvas => {
                     () => elm.offsetWidth,
                     newVal => {
 
-                        if (newVal === document.documentElement.clientWidth || newVal === window.innerWidth)
+                        if (newVal >= Math.min(document.documentElement.clientWidth, window.innerWidth))
                             return;
 
                         listener();
