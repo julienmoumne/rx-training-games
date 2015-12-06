@@ -30,14 +30,14 @@ define([
         var editor;
         var preventStart = $location.search().preventstart;
         var embedded = window != window.top;
-        var editorReady = new Rx.Subject();
+        var headerSize = embedded ? 30 : 120;
+        var editorHeight = window.innerHeight - headerSize;
 
         (function init() {
 
             initSamples();
             initScope();
             initKeyboardEvents();
-            initReadyEvent();
         })();
 
         function selectSample(requestedSample) {
@@ -88,7 +88,7 @@ define([
             $scope.stop = stop;
             $scope.selectSample = selectSample;
             $scope.codemirrorLoaded = initEditor;
-            $scope.editorStyle = getEditorStyle;
+            $scope.gridCanvasLoaded = selectSample;
             $scope.startNewSample = startNewSample;
             $scope.removeSample = removeSample;
             $scope.saveAsGist = saveAsGist;
@@ -97,14 +97,6 @@ define([
             $scope.draftCategory = draftCategory;
             $scope.embedded = embedded;
             $scope.$on('$routeUpdate', () => selectSample());
-        }
-
-        function initReadyEvent() {
-
-            var gridCanvasReadyObservable = $scope.$createObservableFunction('gridCanvasLoaded').take(1);
-            var editorReadyObservable = editorReady.take(1);
-
-            Rx.Observable.forkJoin(gridCanvasReadyObservable, editorReadyObservable).subscribe(() => selectSample());
         }
 
         function selectCategory(category) {
@@ -204,21 +196,16 @@ define([
             editor.on("focus", onEditorFocus);
             editor.on("change", saveLocalSamples);
 
-            editorReady.onNext();
+            _editor.display.wrapper.style.height = editorHeight + 'px';
+
+            editor.refresh();
+
+            $scope.editorLoaded = true;
         }
 
         function onEditorFocus() {
             $scope.$apply(stop);
             unshieldGameKeys();
-        }
-
-        function getEditorStyle() {
-
-            editor.refresh();
-            var headerSize = $scope.embedded ? 30 : 120;
-            return {
-                'height': (window.innerHeight - headerSize) + 'px'
-            };
         }
 
         function initKeyboardEvents() {
