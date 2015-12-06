@@ -18,7 +18,7 @@
 
         <div ng-class="embedded ? 'col-xs-4' : 'col-md-3'">
 
-            <div class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>
+            <div ng-if="editorLoaded" class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>
             <ng-include src="'html/controls.html'"></ng-include>
         </div>
 
