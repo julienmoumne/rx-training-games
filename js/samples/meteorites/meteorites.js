@@ -13,7 +13,7 @@ spaceshipLayer.fill({x: api.randomCoord(), y: api.gameSize - 1});
 
 // meteorite spawns
 Rx.Observable.interval(spawnPulse)
-    .map(() => ({x: api.randomCoord(), y: 0})) // see rxmarbles.com/#map
+    .map(() => ({x: api.randomCoord(), y: 0}))
     .subscribe(meteoriteLayer.fill);
 
 // meteorite updates
@@ -22,7 +22,7 @@ Rx.Observable.interval(fallPulse)
     .do(meteoriteLayer.clear)
     .map(api.directions.Down)
     .do(meteoriteLayer.fill)
-    .where(api.isOffLimits) // see rxmarbles.com/#filter
+    .where(api.isOffLimits)
     .subscribe(api.gameOver);
 
 // bullet spawns

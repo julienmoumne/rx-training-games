@@ -8,6 +8,6 @@ It leverages
 and
 [Switch](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/switch.md).
 
-Use the Left, Up, Right and Down arrows of your keyboard to move the snake.
+[Full diagram](https://raw.githubusercontent.com/JulienMoumne/rx-training-games/master/js/samples/slither-using-map-and-switch/slither-using-map-and-switch.png).
 
-See [full diagram](https://raw.githubusercontent.com/JulienMoumne/rx-training-games/master/js/samples/slither-using-map-and-switch/slither-using-map-and-switch.png).
+Use the Left, Up, Right and Down arrows of your keyboard to move the snake.

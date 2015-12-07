@@ -11,7 +11,6 @@ var pulse = Rx.Observable.interval(snakeSpeedPulse);
 var validKeystrokes = api.keyboard.where(keyCode => keyCode in api.directions);
 
 // duplicate the last keystroke at fixed intervals
-// see rxmarbles.com/#withLatestFrom
 var directions = pulse.withLatestFrom(validKeystrokes, (p, k) => k);
 
 // move the snake

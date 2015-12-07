@@ -3,6 +3,7 @@ This snippet is what makes the snake move in the
 
 This approach leverages the
 [WithLatestFrom Operator](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/withlatestfrom.md).
+See [RxMarbles](http://rxmarbles.com/#withLatestFrom) for a visual representation.
 
 Use the Left, Up, Right and Down arrows of your keyboard to move the snake.
 
