@@ -199,8 +199,6 @@ define([
             _editor.display.wrapper.style.height = editorHeight + 'px';
 
             editor.refresh();
-
-            $scope.editorLoaded = true;
         }
 
         function onEditorFocus() {

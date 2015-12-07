@@ -8,21 +8,21 @@
 
     <div class="row">
 
-        <div class="col-md-3" ng-hide="embedded">
+        <div class="{{embedded ? 'hidden' : 'col-md-3'}}">
 
-            <ng-include src="'html/samples-title.html'"></ng-include>
-            <ng-include src="'html/samples.html'"></ng-include>
-            <ng-include src="'html/import-gist.html'"></ng-include>
-            <ng-include src="'html/built-on.html'"></ng-include>
+            <ng-include src="'html/samples/samples-title.html'"></ng-include>
+            <ng-include src="'html/samples/samples.html'"></ng-include>
+            <ng-include src="'html/samples/import-gist.html'"></ng-include>
+            <ng-include src="'html/samples/built-on.html'"></ng-include>
         </div>
 
-        <div ng-class="embedded ? 'col-xs-4' : 'col-md-3'">
+        <!--setting the class dynamically using an expression happens after initialisation of GridCanvas-->
+        <!--when that happens, $element[0].offsetWidth does not have its final value-->
+        <!--this is the reason why we repeat the include with static classes-->
+        <ng-include ng-if="embedded" class="col-xs-4" src="'html/screen/screen.html'"></ng-include>
+        <ng-include ng-if="!embedded" class="col-md-3" src="'html/screen/screen.html'"></ng-include>
 
-            <div ng-if="editorLoaded" class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>
-            <ng-include src="'html/controls.html'"></ng-include>
-        </div>
-
-        <div ng-class="embedded ? 'col-xs-8' : 'col-md-6'">
+        <div class="{{embedded ? 'col-xs-8' : 'col-md-6'}}">
             <ng-include src="'html/editor.html'"></ng-include>
         </div>
     </div>

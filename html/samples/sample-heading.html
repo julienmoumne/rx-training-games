@@ -11,7 +11,7 @@
     <a title="{{ sample.local ? 'Duplicate tab' : 'Modifications to this tab are not saved. You can copy it and work on your own version.'}}"
        ng-click="startNewSample(sample.code())"><span class="glyphicon glyphicon-duplicate"></span></a>
 
-    <ng-include ng-show="sample.local && !sample.gist" src="'html/github-export.html'"></ng-include>
+    <ng-include ng-show="sample.local && !sample.gist" src="'html/samples/github-export.html'"></ng-include>
 
     <a ng-show="!sample.local || sample.gist"
        ng-href="{{ sample.link }}"
