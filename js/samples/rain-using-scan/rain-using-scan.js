@@ -14,7 +14,7 @@ var droplets = Rx.Observable.interval(spawnPulse)
         }),
         startingPosition
     )
-    .startWith(startingPosition) // see rxmarbles.com/#startWith
+    .startWith(startingPosition)
     .takeWhile(
         coord => !coord.previous || api.isWithinLimits(coord.previous))
     );

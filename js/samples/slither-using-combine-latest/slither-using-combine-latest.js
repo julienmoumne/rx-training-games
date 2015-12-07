@@ -16,7 +16,7 @@ var pulse = Rx.Observable
 var directions = Rx.Observable
     .combineLatest(pulse, validKeystrokes) // see rxmarbles.com/#combineLatest
     .distinctUntilChanged(_.first) // see rxmarbles.com/#distinctUntilChanged
-    .map(_.last); // see rxmarbles.com/#map
+    .map(_.last);
 
 // move the snake
 directions

@@ -11,7 +11,7 @@ snake.fill({x: 1, y: 0}).fill({x: 1, y: 1}); // snake starting point
 var validKeystrokes = api.keyboard.where(keyCode => keyCode in api.directions);
 var directions = Rx.Observable
     .interval(snakeSpeedPulse)
-    .withLatestFrom(validKeystrokes, (p, k) => k); // see rxmarbles.com/#withLatestFrom
+    .withLatestFrom(validKeystrokes, (p, k) => k);
 
 // detect snake-food collisions
 var eaten = food.activations
