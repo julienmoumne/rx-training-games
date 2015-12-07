@@ -1,6 +1,18 @@
 angular.module('rx-training-games.templates', [])
   .run(['$templateCache', function($templateCache) {
-    $templateCache.put('html/built-on.html',
+    $templateCache.put('html/editor.html',
+    '<div ui-codemirror="{ onLoad : codemirrorLoaded }"></div>\n' +
+    '\n' +
+    '<small ng-show="embedded" class="built-using pull-right">\n' +
+    '    <em>\n' +
+    '        Built using\n' +
+    '        <ng-include class="logo-sm" src="\'html/logo.html\'"></ng-include>\n' +
+    '        <a title="Rx Training Games" href="{{ currentSample.link }}">Rx Training Games</a>\n' +
+    '    </em>\n' +
+    '</small>')
+  $templateCache.put('html/logo.html',
+    '<img class="logo" src="logo.svg" alt="Rx Training Games">')
+  $templateCache.put('html/samples/built-on.html',
     '<p class="text-center">\n' +
     '    <em>\n' +
     '        Samples built on\n' +
@@ -11,7 +23,132 @@ angular.module('rx-training-games.templates', [])
     '        <a href="http://www.ecma-international.org/ecma-262/6.0/">ES6</a>\n' +
     '    </em>\n' +
     '</p>')
-  $templateCache.put('html/controls.html',
+  $templateCache.put('html/samples/github-export.html',
+    '<a href\n' +
+    '   title="Export to GitHub Gist"\n' +
+    '   ng-click="saveAsGist(sample)"><span class="glyphicon glyphicon-cloud-upload"></span></a>')
+  $templateCache.put('html/samples/import-gist.html',
+    '<form class="well well-sm">\n' +
+    '    <div class="input-group input-group-sm">\n' +
+    '\n' +
+    '        <input type="text" class="form-control input-sm" ng-model="form.gist">\n' +
+    '\n' +
+    '        <span class="input-group-btn">\n' +
+    '          <button type="submit" class="btn btn-default btn-sm" ng-click="importGist()">\n' +
+    '              <span class="glyphicon glyphicon-cloud-download"></span>\n' +
+    '              Import GitHub Gist\n' +
+    '          </button>\n' +
+    '        </span>\n' +
+    '    </div>\n' +
+    '</form>')
+  $templateCache.put('html/samples/sample-body.html',
+    '<div ng-click="$event.stopPropagation()">\n' +
+    '\n' +
+    '    <p markdown-to-html="sample.description"></p>\n' +
+    '\n' +
+    '    <a twitter\n' +
+    '       ng-if="sample.active"\n' +
+    '       ng-show="!sample.local || sample.gist"\n' +
+    '       class="pull-right"\n' +
+    '       data-count=\'none\'\n' +
+    '       data-url=\'{{ sample.link }}\'\n' +
+    '       data-text=\'Check out some Rx in action at \'></a>\n' +
+    '\n' +
+    '    <div ng-hide="sample.local">\n' +
+    '        <a  href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">\n' +
+    '            <strong>Authors</strong>\n' +
+    '        </a>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <div ng-show="sample.local">\n' +
+    '        <hr/>\n' +
+    '        <p ng-hide="sample.gist">\n' +
+    '            <em>\n' +
+    '                You can\n' +
+    '                <ng-include src="\'html/samples/github-export.html\'"></ng-include>\n' +
+    '                your work on GitHub Gist. This will allow you to save it on the cloud and share it with\n' +
+    '                others.\n' +
+    '            </em>\n' +
+    '        </p>\n' +
+    '        <p ng-show="sample.gist">\n' +
+    '            <em>\n' +
+    '                Saved on\n' +
+    '                <a title="GitHub Gist Link"\n' +
+    '                   ng-href="{{\'https://gist.github.com/anonymous/\' + sample.gist}}">GitHub Gist</a>\n' +
+    '                {{sample.gistUploadDate | moment}}.\n' +
+    '                <br/>\n' +
+    '                You can\n' +
+    '                <ng-include src="\'html/samples/github-export.html\'"></ng-include>\n' +
+    '                it again if you have made modifications since.\n' +
+    '            </em>\n' +
+    '        </p>\n' +
+    '    </div>\n' +
+    '</div>')
+  $templateCache.put('html/samples/sample-heading.html',
+    '<span>\n' +
+    '    {{ sample.title }}\n' +
+    '</span>\n' +
+    '\n' +
+    '<span ng-click="$event.stopPropagation();" class="pull-right">\n' +
+    '\n' +
+    '    <a href ng-show="sample.local"\n' +
+    '       title="Delete"\n' +
+    '       ng-click="removeSample(sample)"><span class="glyphicon glyphicon-trash"></span></a>\n' +
+    '\n' +
+    '    <a title="{{ sample.local ? \'Duplicate tab\' : \'Modifications to this tab are not saved. You can copy it and work on your own version.\'}}"\n' +
+    '       ng-click="startNewSample(sample.code())"><span class="glyphicon glyphicon-duplicate"></span></a>\n' +
+    '\n' +
+    '    <ng-include ng-show="sample.local && !sample.gist" src="\'html/samples/github-export.html\'"></ng-include>\n' +
+    '\n' +
+    '    <a ng-show="!sample.local || sample.gist"\n' +
+    '       ng-href="{{ sample.link }}"\n' +
+    '       title="Share sample"><span class="glyphicon glyphicon-link"></span></a>\n' +
+    '</span>\n' +
+    '')
+  $templateCache.put('html/samples/samples-title.html',
+    '<div class="text-center">\n' +
+    '    <p>\n' +
+    '        Fiddle with the samples bellow then\n' +
+    '        <a href="https://github.com/JulienMoumne/rx-training-games/blob/master/README.md">learn about the project</a>.\n' +
+    '    </p>\n' +
+    '</div>')
+  $templateCache.put('html/samples/samples.html',
+    '<uib-tabset>\n' +
+    '\n' +
+    '    <uib-tab\n' +
+    '            ng-hide="category.title === draftCategory && !hasDraft"\n' +
+    '            ng-repeat="category in categories"\n' +
+    '            active="category.active"\n' +
+    '            ng-click="selectCategory(category)">\n' +
+    '\n' +
+    '        <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>\n' +
+    '\n' +
+    '        <uib-accordion vertical="true">\n' +
+    '\n' +
+    '            <uib-accordion-group ng-repeat="sample in samples | filter : {category: category.title}"\n' +
+    '                                 is-disabled="sample.active"\n' +
+    '                                 is-open="sample.active"\n' +
+    '                                 ng-click="selectSample(sample)">\n' +
+    '\n' +
+    '                <uib-accordion-heading>\n' +
+    '                    <ng-include src="\'html/samples/sample-heading.html\'"></ng-include>\n' +
+    '                </uib-accordion-heading>\n' +
+    '\n' +
+    '                <ng-include src="\'html/samples/sample-body.html\'"></ng-include>\n' +
+    '\n' +
+    '            </uib-accordion-group>\n' +
+    '        </uib-accordion>\n' +
+    '    </uib-tab>\n' +
+    '\n' +
+    '    <uib-tab\n' +
+    '            ng-click="startNewSample()">\n' +
+    '        <uib-tab-heading>\n' +
+    '            <span ng-hide="hasDraft"><em>develop your idea</em></span>\n' +
+    '            <span ng-show="hasDraft" class="glyphicon glyphicon-plus"></span>\n' +
+    '        </uib-tab-heading>\n' +
+    '    </uib-tab>\n' +
+    '</uib-tabset>')
+  $templateCache.put('html/screen/controls.html',
     '<div class="controls">\n' +
     '    <span ng-show="on">\n' +
     '        <span class="label label-primary">Engine On</span>\n' +
@@ -37,143 +174,9 @@ angular.module('rx-training-games.templates', [])
     '        </div>\n' +
     '    </div>\n' +
     '</div>')
-  $templateCache.put('html/editor.html',
-    '<div ui-codemirror="{ onLoad : codemirrorLoaded }"></div>\n' +
-    '\n' +
-    '<small ng-show="embedded" class="built-using pull-right">\n' +
-    '    <em>\n' +
-    '        Built using\n' +
-    '        <ng-include class="logo-sm" src="\'html/logo.html\'"></ng-include>\n' +
-    '        <a title="Rx Training Games" href="{{ currentSample.link }}">Rx Training Games</a>\n' +
-    '    </em>\n' +
-    '</small>')
-  $templateCache.put('html/github-export.html',
-    '<a href\n' +
-    '   title="Export to GitHub Gist"\n' +
-    '   ng-click="saveAsGist(sample)"><span class="glyphicon glyphicon-cloud-upload"></span></a>')
-  $templateCache.put('html/import-gist.html',
-    '<form class="well well-sm">\n' +
-    '    <div class="input-group input-group-sm">\n' +
-    '\n' +
-    '        <input type="text" class="form-control input-sm" ng-model="form.gist">\n' +
-    '\n' +
-    '        <span class="input-group-btn">\n' +
-    '          <button type="submit" class="btn btn-default btn-sm" ng-click="importGist()">\n' +
-    '              <span class="glyphicon glyphicon-cloud-download"></span>\n' +
-    '              Import GitHub Gist\n' +
-    '          </button>\n' +
-    '        </span>\n' +
-    '    </div>\n' +
-    '</form>')
-  $templateCache.put('html/logo.html',
-    '<img class="logo" src="logo.svg" alt="Rx Training Games">')
-  $templateCache.put('html/sample-body.html',
-    '<div ng-click="$event.stopPropagation()">\n' +
-    '\n' +
-    '    <p markdown-to-html="sample.description"></p>\n' +
-    '\n' +
-    '    <a twitter\n' +
-    '       ng-if="sample.active"\n' +
-    '       ng-show="!sample.local || sample.gist"\n' +
-    '       class="pull-right"\n' +
-    '       data-count=\'none\'\n' +
-    '       data-url=\'{{ sample.link }}\'\n' +
-    '       data-text=\'Check out some Rx in action at \'></a>\n' +
-    '\n' +
-    '    <div ng-hide="sample.local">\n' +
-    '        <a  href="https://github.com/JulienMoumne/rx-training-games/commits/master/js/samples/{{ sample.title }}">\n' +
-    '            <strong>Authors</strong>\n' +
-    '        </a>\n' +
-    '    </div>\n' +
-    '\n' +
-    '    <div ng-show="sample.local">\n' +
-    '        <hr/>\n' +
-    '        <p ng-hide="sample.gist">\n' +
-    '            <em>\n' +
-    '                You can\n' +
-    '                <ng-include src="\'html/github-export.html\'"></ng-include>\n' +
-    '                your work on GitHub Gist. This will allow you to save it on the cloud and share it with\n' +
-    '                others.\n' +
-    '            </em>\n' +
-    '        </p>\n' +
-    '        <p ng-show="sample.gist">\n' +
-    '            <em>\n' +
-    '                Saved on\n' +
-    '                <a title="GitHub Gist Link"\n' +
-    '                   ng-href="{{\'https://gist.github.com/anonymous/\' + sample.gist}}">GitHub Gist</a>\n' +
-    '                {{sample.gistUploadDate | moment}}.\n' +
-    '                <br/>\n' +
-    '                You can\n' +
-    '                <ng-include src="\'html/github-export.html\'"></ng-include>\n' +
-    '                it again if you have made modifications since.\n' +
-    '            </em>\n' +
-    '        </p>\n' +
-    '    </div>\n' +
-    '</div>')
-  $templateCache.put('html/sample-heading.html',
-    '<span>\n' +
-    '    {{ sample.title }}\n' +
-    '</span>\n' +
-    '\n' +
-    '<span ng-click="$event.stopPropagation();" class="pull-right">\n' +
-    '\n' +
-    '    <a href ng-show="sample.local"\n' +
-    '       title="Delete"\n' +
-    '       ng-click="removeSample(sample)"><span class="glyphicon glyphicon-trash"></span></a>\n' +
-    '\n' +
-    '    <a title="{{ sample.local ? \'Duplicate tab\' : \'Modifications to this tab are not saved. You can copy it and work on your own version.\'}}"\n' +
-    '       ng-click="startNewSample(sample.code())"><span class="glyphicon glyphicon-duplicate"></span></a>\n' +
-    '\n' +
-    '    <ng-include ng-show="sample.local && !sample.gist" src="\'html/github-export.html\'"></ng-include>\n' +
-    '\n' +
-    '    <a ng-show="!sample.local || sample.gist"\n' +
-    '       ng-href="{{ sample.link }}"\n' +
-    '       title="Share sample"><span class="glyphicon glyphicon-link"></span></a>\n' +
-    '</span>\n' +
-    '')
-  $templateCache.put('html/samples-title.html',
-    '<div class="text-center">\n' +
-    '    <p>\n' +
-    '        Fiddle with the samples bellow then\n' +
-    '        <a href="https://github.com/JulienMoumne/rx-training-games/blob/master/README.md">learn about the project</a>.\n' +
-    '    </p>\n' +
-    '</div>')
-  $templateCache.put('html/samples.html',
-    '<uib-tabset>\n' +
-    '\n' +
-    '    <uib-tab\n' +
-    '            ng-hide="category.title === draftCategory && !hasDraft"\n' +
-    '            ng-repeat="category in categories"\n' +
-    '            active="category.active"\n' +
-    '            ng-click="selectCategory(category)">\n' +
-    '\n' +
-    '        <uib-tab-heading><strong>{{category.title}}</strong></uib-tab-heading>\n' +
-    '\n' +
-    '        <uib-accordion vertical="true">\n' +
-    '\n' +
-    '            <uib-accordion-group ng-repeat="sample in samples | filter : {category: category.title}"\n' +
-    '                                 is-disabled="sample.active"\n' +
-    '                                 is-open="sample.active"\n' +
-    '                                 ng-click="selectSample(sample)">\n' +
-    '\n' +
-    '                <uib-accordion-heading>\n' +
-    '                    <ng-include src="\'html/sample-heading.html\'"></ng-include>\n' +
-    '                </uib-accordion-heading>\n' +
-    '\n' +
-    '                <ng-include src="\'html/sample-body.html\'"></ng-include>\n' +
-    '\n' +
-    '            </uib-accordion-group>\n' +
-    '        </uib-accordion>\n' +
-    '    </uib-tab>\n' +
-    '\n' +
-    '    <uib-tab\n' +
-    '            ng-click="startNewSample()">\n' +
-    '        <uib-tab-heading>\n' +
-    '            <span ng-hide="hasDraft"><em>develop your idea</em></span>\n' +
-    '            <span ng-show="hasDraft" class="glyphicon glyphicon-plus"></span>\n' +
-    '        </uib-tab-heading>\n' +
-    '    </uib-tab>\n' +
-    '</uib-tabset>')
+  $templateCache.put('html/screen/screen.html',
+    '<div class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>\n' +
+    '<ng-include src="\'html/screen/controls.html\'"></ng-include>')
   $templateCache.put('html/title.html',
     '<h1>\n' +
     '    <ng-include src="\'html/logo.html\'"></ng-include>\n' +
@@ -195,21 +198,21 @@ angular.module('rx-training-games.templates', [])
     '\n' +
     '    <div class="row">\n' +
     '\n' +
-    '        <div class="col-md-3" ng-hide="embedded">\n' +
+    '        <div class="{{embedded ? \'hidden\' : \'col-md-3\'}}">\n' +
     '\n' +
-    '            <ng-include src="\'html/samples-title.html\'"></ng-include>\n' +
-    '            <ng-include src="\'html/samples.html\'"></ng-include>\n' +
-    '            <ng-include src="\'html/import-gist.html\'"></ng-include>\n' +
-    '            <ng-include src="\'html/built-on.html\'"></ng-include>\n' +
+    '            <ng-include src="\'html/samples/samples-title.html\'"></ng-include>\n' +
+    '            <ng-include src="\'html/samples/samples.html\'"></ng-include>\n' +
+    '            <ng-include src="\'html/samples/import-gist.html\'"></ng-include>\n' +
+    '            <ng-include src="\'html/samples/built-on.html\'"></ng-include>\n' +
     '        </div>\n' +
     '\n' +
-    '        <div ng-class="embedded ? \'col-xs-4\' : \'col-md-3\'">\n' +
+    '        <!--setting the class dynamically using an expression happens after initialisation of GridCanvas-->\n' +
+    '        <!--when that happens, $element[0].offsetWidth does not have its final value-->\n' +
+    '        <!--this is the reason why we repeat the include with static classes-->\n' +
+    '        <ng-include ng-if="embedded" class="col-xs-4" src="\'html/screen/screen.html\'"></ng-include>\n' +
+    '        <ng-include ng-if="!embedded" class="col-md-3" src="\'html/screen/screen.html\'"></ng-include>\n' +
     '\n' +
-    '            <div ng-if="editorLoaded" class="grid-canvas" tabindex="1" grid-canvas onload="gridCanvasLoaded()"></div>\n' +
-    '            <ng-include src="\'html/controls.html\'"></ng-include>\n' +
-    '        </div>\n' +
-    '\n' +
-    '        <div ng-class="embedded ? \'col-xs-8\' : \'col-md-6\'">\n' +
+    '        <div class="{{embedded ? \'col-xs-8\' : \'col-md-6\'}}">\n' +
     '            <ng-include src="\'html/editor.html\'"></ng-include>\n' +
     '        </div>\n' +
     '    </div>\n' +
