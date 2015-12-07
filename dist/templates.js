@@ -209,8 +209,10 @@ angular.module('rx-training-games.templates', [])
     '        <!--setting the class dynamically using an expression happens after initialisation of GridCanvas-->\n' +
     '        <!--when that happens, $element[0].offsetWidth does not have its final value-->\n' +
     '        <!--this is the reason why we repeat the include with static classes-->\n' +
-    '        <ng-include ng-if="embedded" class="col-xs-4" src="\'html/screen/screen.html\'"></ng-include>\n' +
-    '        <ng-include ng-if="!embedded" class="col-md-3" src="\'html/screen/screen.html\'"></ng-include>\n' +
+    '        <div ng-if="editorLoaded">\n' +
+    '            <ng-include ng-if="embedded" class="col-xs-4" src="\'html/screen/screen.html\'"></ng-include>\n' +
+    '            <ng-include ng-if="!embedded" class="col-md-3" src="\'html/screen/screen.html\'"></ng-include>\n' +
+    '        </div>\n' +
     '\n' +
     '        <div class="{{embedded ? \'col-xs-8\' : \'col-md-6\'}}">\n' +
     '            <ng-include src="\'html/editor.html\'"></ng-include>\n' +
