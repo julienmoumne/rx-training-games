@@ -19,8 +19,10 @@
         <!--setting the class dynamically using an expression happens after initialisation of GridCanvas-->
         <!--when that happens, $element[0].offsetWidth does not have its final value-->
         <!--this is the reason why we repeat the include with static classes-->
-        <ng-include ng-if="embedded" class="col-xs-4" src="'html/screen/screen.html'"></ng-include>
-        <ng-include ng-if="!embedded" class="col-md-3" src="'html/screen/screen.html'"></ng-include>
+        <div ng-if="editorLoaded">
+            <ng-include ng-if="embedded" class="col-xs-4" src="'html/screen/screen.html'"></ng-include>
+            <ng-include ng-if="!embedded" class="col-md-3" src="'html/screen/screen.html'"></ng-include>
+        </div>
 
         <div class="{{embedded ? 'col-xs-8' : 'col-md-6'}}">
             <ng-include src="'html/editor.html'"></ng-include>
