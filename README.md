@@ -83,7 +83,7 @@ Code samples can be embedded in web pages using an iframe :
 ```
 
 See [embedded mode demo](https://julienmoumne.github.io/rx-training-games/embedded-demo) and
-[Introducing Rx Training Games](http://techblog.moumne.com/2015/11/22/introducing-rx-training-games/).
+[Introducing Rx Training Games](http://moumne.com/2015/11/22/introducing-rx-training-games/).
 
 Auto start can be prevented by appending `&preventstart=true` to the URL.
 
