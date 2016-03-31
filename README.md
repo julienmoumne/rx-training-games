@@ -61,6 +61,7 @@ The following commands assume you have npm installed and the project has been pr
  *  build & run for development : `npm start` (alias of `npm run build:dev && npm run start:server:dev`)
  *  build & run for production : `npm run start:prod` (alias of `npm run build:prod && npm run start:server:prod`)
 
+A [Hotshell](https://github.com/julienmoumne/hs) menu is provided with these commands. [See its source](./hs.js).
 
 ## Browser Compatibility
 
@@ -107,5 +108,3 @@ Here is a list of projects that have goals in common with *Rx Training Games* :
 ## License
 
 *'Rx Training Games'* is released under the GPL v3 (or later) license, see [gpl-3.0.txt](misc/gpl-3.0.txt).
-
-## [Analytics Powered by Piwik Cloud](https://rx-training-games.piwik.pro)
