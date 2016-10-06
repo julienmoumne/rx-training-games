@@ -251,6 +251,8 @@ var defaultOptions = showdown.getDefaultOptions();
     - [ ] This is still pending
    ```
  * **smoothLivePreview**: (boolean) [default false] Prevents weird effects in live previews due to incomplete input
+ 
+ * **smartIndentationFix**: (boolean) [default false] Tries to smartly fix indentation problems related to es6 template strings in the midst of indented code.
 
 ## CLI Tool
 
@@ -264,6 +266,10 @@ Please visit https://github.com/showdownjs/ngShowdown for more information.
 ## Integration with TypeScript
 
 If you're using TypeScript you maybe want to use the types from [DefinitelyTyped][definitely-typed]
+
+## Integration with SystemJS/JSPM
+
+Integration with SystemJS can be obtained via the third party ["system-md" plugin](https://github.com/guybedford/system-md).
 
 ## XSS vulnerability
 

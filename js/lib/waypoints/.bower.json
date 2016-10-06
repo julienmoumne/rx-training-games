@@ -23,7 +23,7 @@
     "tag": "3.1.1",
     "commit": "13ae054b649b5e0df9a549abb4a0420eac67bea8"
   },
-  "_source": "git://github.com/imakewebthings/waypoints.git",
+  "_source": "https://github.com/imakewebthings/waypoints.git",
   "_target": "~3.1.1",
   "_originalSource": "waypoints"
 }

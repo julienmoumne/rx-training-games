@@ -30,7 +30,7 @@
     "tag": "0.1.1",
     "commit": "2df778af2f45357bf475d4ad5b95dffb83263421"
   },
-  "_source": "git://github.com/simonwhitaker/github-fork-ribbon-css.git",
+  "_source": "https://github.com/simonwhitaker/github-fork-ribbon-css.git",
   "_target": "0.1.1",
   "_originalSource": "github-fork-ribbon-css"
 }

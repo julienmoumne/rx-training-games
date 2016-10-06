@@ -32,7 +32,7 @@
     "tag": "1.4.4",
     "commit": "f548e1a54739beab0b11be51ce96bf0dbd45af67"
   },
-  "_source": "git://github.com/djds4rce/angular-socialshare.git",
+  "_source": "https://github.com/djds4rce/angular-socialshare.git",
   "_target": "1.4.4",
   "_originalSource": "angular-socialshare"
 }

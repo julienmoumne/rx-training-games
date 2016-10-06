@@ -37,7 +37,7 @@
     "tag": "0.2.3",
     "commit": "ff233e43be10f55adc56b27a9cad0f42f3fd5675"
   },
-  "_source": "git://github.com/grevory/angular-local-storage.git",
+  "_source": "https://github.com/grevory/angular-local-storage.git",
   "_target": "0.2.3",
   "_originalSource": "angular-local-storage"
 }

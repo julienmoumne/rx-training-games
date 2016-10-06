@@ -21,7 +21,7 @@
     "tag": "v0.4.13",
     "commit": "572d9a648800b698004c3c3edaa4710192b23ec0"
   },
-  "_source": "git://github.com/philschatz/octokat.js.git",
+  "_source": "https://github.com/philschatz/octokat.js.git",
   "_target": "0.4.13",
   "_originalSource": "octokat"
 }

@@ -42,7 +42,7 @@
     "tag": "v0.7.9",
     "commit": "255df72deadf61f7b244d3c8a1ec274aac7c1774"
   },
-  "_source": "git://github.com/JanStevens/angular-growl-2.git",
+  "_source": "https://github.com/JanStevens/angular-growl-2.git",
   "_target": "0.7.9",
   "_originalSource": "angular-growl-v2"
 }
