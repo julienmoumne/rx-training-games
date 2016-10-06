@@ -22,8 +22,11 @@
     "github-fork-ribbon-css": "0.1.1",
     "twitter": "http://platform.twitter.com/widgets.js",
     "chance": "0.8.0",
-    "ejs" : "1.0.0",
-    "angulartics" : "0.20.2",
-    "domReady" : "2.0.1"
+    "ejs": "1.0.0",
+    "angulartics": "0.20.2",
+    "domReady": "2.0.1"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
   }
 }
