@@ -2,6 +2,7 @@ define(
     [
         'text!samples/meteorites/meteorites.js', 'text!samples/meteorites/README.md',
         'text!samples/snake/snake.js', 'text!samples/snake/README.md',
+        'text!samples/langton-ant/langton-ant.js', 'text!samples/langton-ant/README.md',
         'text!samples/rain-using-state/rain-using-state.js', 'text!samples/rain-using-state/README.md',
         'text!samples/rain-using-scan/rain-using-scan.js', 'text!samples/rain-using-scan/README.md',
         'text!samples/rain-using-generate/rain-using-generate.js', 'text!samples/rain-using-generate/README.md',
@@ -13,6 +14,7 @@ define(
     ],
     (meteoritesJS, meteoritesMD,
      snakeJS, snakeMD,
+     langtonAntJS, langtonAntMD,
      rainUsingStateJS, rainUsingStateMD,
      rainUsingScanJS, rainUsingScanMD,
      rainUsingGenerateJS, rainUsingGenerateMD,
@@ -36,6 +38,12 @@ define(
                 category: 'full-game',
                 code: snakeJS,
                 description: snakeMD
+            },
+            {
+                title: 'Langton\'s ant',
+                category: 'full-game',
+                code: langtonAntJS,
+                description: langtonAntMD
             },
             {
                 title: 'rain-using-state',

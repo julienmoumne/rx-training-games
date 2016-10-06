@@ -61,7 +61,7 @@ The following commands assume you have npm installed and the project has been pr
  *  build & run for development : `npm start` (alias of `npm run build:dev && npm run start:server:dev`)
  *  build & run for production : `npm run start:prod` (alias of `npm run build:prod && npm run start:server:prod`)
 
-A [Hotshell](https://github.com/julienmoumne/hs) menu is provided with these commands. [See its source](./hs.js).
+A [Hotshell](https://github.com/julienmoumne/hotshell) menu is provided with these commands. [See its source](./hs.js).
 
 ## Browser Compatibility
 
@@ -87,12 +87,6 @@ See [embedded mode demo](https://julienmoumne.github.io/rx-training-games/embedd
 [Introducing Rx Training Games](http://moumne.com/2015/11/22/introducing-rx-training-games/).
 
 Auto start can be prevented by appending `&preventstart=true` to the URL.
-
-
-## GitHub Page
-
-[Rx Training Games](https://julienmoumne.github.io/rx-training-games) is published as a
-[GitHub Page](https://pages.github.com/) using [publish.sh](publish.sh).
 
 ## Other Playgrounds
 
