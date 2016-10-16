@@ -1,8 +1,11 @@
-var squareSize = 4, antPulse = 1;
+var squareSize = 4, antPulse = 1, activatedSquares = 40;
 
 api.initGrid({squareSize: squareSize});
 
 var boardLayer = api.addLayer({color: '#337ab7'}), antLayer = api.addLayer({color: '#275b8c'});
+
+// activate random squares
+Rx.Observable.repeat(() => boardLayer.fill(api.randomSquare()), activatedSquares).subscribe(f => f());
 
 // place the ant in the middle of the board
 antLayer.fill({x: api.gameSize / 2, y: api.gameSize / 2});
