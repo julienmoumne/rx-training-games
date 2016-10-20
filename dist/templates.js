@@ -22,11 +22,6 @@ angular.module('rx-training-games.templates', [])
     '        <a href="http://underscorejs.org/">_</a> and\n' +
     '        <a href="http://www.ecma-international.org/ecma-262/6.0/">ES6</a>\n' +
     '    </em>\n' +
-    '</p>\n' +
-    '<p class="text-center">\n' +
-    '    <small>\n' +
-    '        <a href="https://rx-training-games.piwik.pro">Anonymised Analytics by Piwik Cloud</a>\n' +
-    '    </small>\n' +
     '</p>')
   $templateCache.put('html/samples/github-export.html',
     '<a href\n' +
