@@ -5,9 +5,9 @@ define([], () => {
 
     this._paq = [];
     _paq.push(['enableLinkTracking']);
-    var u = "//rx-training-games.piwikpro.com/";
+    var u = "//piwik.moumne.com/";
     _paq.push(['setTrackerUrl', u + 'piwik.php']);
-    _paq.push(['setSiteId', 1]);
+    _paq.push(['setSiteId', 11]);
     var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
     g.type = 'text/javascript';
     g.async = true;
