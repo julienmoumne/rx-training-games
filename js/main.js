@@ -11,8 +11,8 @@ require.config({
         'angular-loading-bar': 'lib/angular-loading-bar/build/loading-bar',
         'angular-social-share': 'lib/angular-socialshare/angular-socialshare',
         'angular-growl-v2': 'lib/angular-growl-v2/build/angular-growl',
-        'angulartics': 'lib/angulartics/src/angulartics',
-        'angulartics-piwik': 'lib/angulartics/src/angulartics-piwik',
+        // 'angulartics': 'lib/angulartics/src/angulartics',
+        // 'angulartics-piwik': 'lib/angulartics/src/angulartics-piwik',
         'rx': 'lib/rxjs/dist/rx.all',
         'rx.angular': 'lib/angular-rx/dist/rx.angular',
         'underscore': 'lib/underscore/underscore',
@@ -49,8 +49,8 @@ require.config({
         'angular-loading-bar': ['angular'],
         'angular-social-share': ['angular', 'twitter'],
         'angular-growl-v2': ['angular'],
-        'angulartics': ['angular'],
-        'angulartics-piwik': ['angulartics', 'app/stats'],
+        // 'angulartics': ['angular'],
+        // 'angulartics-piwik': ['angulartics', 'app/stats'],
         'ng-showdown': ['angular-sanitize'],
         'ejs': {
             exports: 'ejs'
