@@ -5,6 +5,7 @@
     "requirejs-text": "2.0.14",
     "angular": "1.4.8",
     "angular-route": "1.4.8",
+    "angular-sanitize": "1.4.8",
     "angular-bootstrap": "0.14.3",
     "angular-ui-codemirror": "0.3.0",
     "codemirror": "5.19.0",
@@ -24,10 +25,10 @@
     "twitter": "http://platform.twitter.com/widgets.js",
     "chance": "0.8.0",
     "ejs": "1.0.0",
-    "angulartics": "0.20.2",
     "domReady": "2.0.1"
   },
   "resolutions": {
-    "angular": "1.4.8"
+    "angular": "1.4.8",
+    "angular-sanitize": "1.4.8"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "name": "rx-angular",
+  "version": "0.0.14",
+  "main": "dist/rx.angular.js",
+  "dependencies": {
+    "rxjs": "*"
+  },
+  "ignore": [
+    ".*",
+    "*.bat",
+    "*.md",
+    "*.txt",
+    "*.log",
+    "package.json",
+    "node_modules",
+    "doc",
+    "examples",
+    "src",
+    "tests"
+  ]
+}

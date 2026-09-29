@@ -1,5 +1,5 @@
 *Rx Training Games* is a coding playground that can be used to 
-learn and practice [Reactive Extensions](http://reactivex.io/) coding [grid-based](API.md) games.
+learn and practice [Reactive Extensions](//reactivex.io/) coding [grid-based](API.md) games.
 
 See it in action [here](https://julienmoumne.github.io/rx-training-games).
 
@@ -24,7 +24,7 @@ and is saved in the browser's [local storage](https://developer.mozilla.org/en-U
 GitHub Gists can be used to publicly share code samples.
 
 Developing using Reactive Extensions is possible in JavaScript thanks to [RxJS](https://github.com/Reactive-Extensions/RxJS).
-Concepts found in this project are equally applicable to any of Reactive Extensions' [implementations](http://reactivex.io/languages.html).
+Concepts found in this project are equally applicable to any of Reactive Extensions' [implementations](//reactivex.io/languages.html).
  
 A combination of [HTML5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) and a custom built [API](API.md)
 allows the developer to interact with a grid-based display.
@@ -54,7 +54,7 @@ Developing code samples is done using the [API](API.md).
 ## How to build and run the code locally
 
 Building and running the project is done using [npm](https://www.npmjs.com/) with the method described in
-[blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool).
+[blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool](//blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool).
 
 The following commands assume you have npm installed and the project has been primed using `npm install`.
   
@@ -63,12 +63,30 @@ The following commands assume you have npm installed and the project has been pr
 
 A [Hotshell](https://github.com/julienmoumne/hotshell) menu is provided with these commands. [See its source](./hs.js).
 
+## How to publish GitHub Pages
+
+GitHub Pages is deployed directly from the `master` branch and the repository root (`/`).
+The production build (`index.html`, `dist/` and `js/lib/`) is committed on `master`.
+
+The empty `.nojekyll` file tells GitHub Pages to serve the repository as static files without Jekyll processing.
+
+To publish manually from `master`:
+
+```sh
+npm run build:prod
+git add -A
+git commit -m "publish rx-training-games"
+git push origin master
+```
+
+The Hotshell `g` entry runs this same publish flow
+
 ## Browser Compatibility
 
 The conciseness of the code examples provided in the platform rely heavily on 
 [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
-You will need a browser from this [list](http://caniuse.com/#feat=arrow-functions) to use the platform.
+You will need a browser from this [list](//caniuse.com/#feat=arrow-functions) to use the platform.
 
 ## Embedded mode
 
@@ -84,7 +102,7 @@ Code samples can be embedded in web pages using an iframe :
 ```
 
 See [embedded mode demo](https://julienmoumne.github.io/rx-training-games/embedded-demo) and
-[Introducing Rx Training Games](http://julienmoumne.github.io/2015/11/22/introducing-rx-training-games/).
+[Introducing Rx Training Games](//julienmoumne.github.io/2015/11/22/introducing-rx-training-games/).
 
 Auto start can be prevented by appending `&preventstart=true` to the URL.
 
@@ -92,12 +110,12 @@ Auto start can be prevented by appending `&preventstart=true` to the URL.
 
 Here is a list of projects that have goals in common with *Rx Training Games* :
 
- * [www.objectplayground.com](http://www.objectplayground.com) a tool for visualizing and experimenting with JavaScript object relationships
- * [jessevdk.github.io/webgl-play](http://jessevdk.github.io/webgl-play/) a live editing environment for experimenting WebGL
- * [xgrommx.github.io/rx-book](http://xgrommx.github.io/rx-book) a book on RxJS with live examples built on top of [JS Bin](https://jsbin.com)
- * [www.typescriptlang.org/Playground](http://www.typescriptlang.org/Playground) a TypeScript playground
- * [www.playmycode.com](http://www.playmycode.com) an online platform for building, playing and sharing browser games
- * [RxMarbles](http://rxmarbles.com/) a list of interactive diagrams of Rx Observables
+ * [www.objectplayground.com](//www.objectplayground.com) a tool for visualizing and experimenting with JavaScript object relationships
+ * [jessevdk.github.io/webgl-play](//jessevdk.github.io/webgl-play/) a live editing environment for experimenting WebGL
+ * [xgrommx.github.io/rx-book](//xgrommx.github.io/rx-book) a book on RxJS with live examples built on top of [JS Bin](https://jsbin.com)
+ * [www.typescriptlang.org/Playground](//www.typescriptlang.org/Playground) a TypeScript playground
+ * [www.playmycode.com](//www.playmycode.com) an online platform for building, playing and sharing browser games
+ * [RxMarbles](//rxmarbles.com/) a list of interactive diagrams of Rx Observables
 
 ## License
 

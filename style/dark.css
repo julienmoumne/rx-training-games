@@ -1,0 +1,337 @@
+/*
+ * Forced dark color theme for Rx Training Games.
+ *
+ * The application intentionally stays on Bootstrap 3: Angular UI Bootstrap
+ * 0.14.3 depends on Bootstrap 3 markup/CSS. These overrides change colors only;
+ * they do not alter layout, spacing, sizing or responsive breakpoints.
+ */
+
+html {
+    color-scheme: dark;
+    background-color: #0d1117;
+}
+
+body {
+    color: #c9d1d9;
+    background-color: #0d1117;
+}
+
+/* Typography */
+a {
+    color: #58a6ff;
+}
+
+a:hover,
+a:focus {
+    color: #79c0ff;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+    color: #c9d1d9;
+}
+
+.text-muted {
+    color: #8b949e;
+}
+
+hr {
+    border-top-color: #30363d;
+}
+
+code {
+    color: #ff7b72;
+    background-color: #161b22;
+}
+
+pre {
+    color: #c9d1d9;
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+blockquote {
+    border-left-color: #30363d;
+}
+
+/* Angular UI Bootstrap tabs */
+.nav > li > a:hover,
+.nav > li > a:focus {
+    background-color: #161b22;
+}
+
+.nav-tabs > li > a {
+    color: #8b949e;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: #30363d;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #f0f6fc;
+    background-color: #0d1117;
+    border-color: #30363d;
+    border-bottom-color: transparent;
+}
+
+/* Angular UI Bootstrap accordion */
+.panel,
+.panel-default {
+    background-color: #0d1117;
+    border-color: #30363d;
+}
+
+.panel-default > .panel-heading {
+    color: #c9d1d9;
+    background-color: #161b22;
+    background-image: none;
+    border-color: #30363d;
+}
+
+/* Active sample entries are disabled only to keep them open; do not gray their labels. */
+.panel-title .text-muted {
+    color: inherit;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
+    border-top-color: #30363d;
+}
+
+.panel-footer {
+    background-color: #161b22;
+    border-top-color: #30363d;
+}
+
+/* GitHub Gist import form */
+.well {
+    background-color: #161b22;
+    background-image: none;
+    border-color: #30363d;
+    box-shadow: inset 0 1px 1px rgba(240, 246, 252, 0.04);
+}
+
+.form-control {
+    color: #f0f6fc;
+    background-color: #0d1117;
+    border-color: #30363d;
+    box-shadow: inset 0 1px 1px rgba(1, 4, 9, 0.4);
+}
+
+.form-control:focus {
+    border-color: #58a6ff;
+    box-shadow: inset 0 1px 1px rgba(1, 4, 9, 0.4), 0 0 6px rgba(88, 166, 255, 0.45);
+}
+
+.form-control::-moz-placeholder {
+    color: #6e7681;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder,
+.form-control::-webkit-input-placeholder {
+    color: #6e7681;
+}
+
+.input-group-addon {
+    color: #c9d1d9;
+    background-color: #21262d;
+    border-color: #30363d;
+}
+
+/* Bootstrap 3 default buttons: same geometry, dark colors. */
+.btn-default {
+    color: #c9d1d9;
+    background-color: #21262d;
+    background-image: none;
+    border-color: #30363d;
+    text-shadow: none;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    color: #f0f6fc;
+    background-color: #30363d;
+    background-image: none;
+    border-color: #8b949e;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus {
+    color: #8b949e;
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+/* Keep contextual Bootstrap components flat on a dark background. */
+.btn-primary,
+.label-primary,
+.github-fork-ribbon {
+    background-image: none;
+}
+
+/* Engine errors and angular-growl notifications. */
+.alert-success {
+    color: #aff5b4;
+    background-color: #033a16;
+    background-image: none;
+    border-color: #238636;
+}
+
+.alert-info {
+    color: #a5d6ff;
+    background-color: #0c2d48;
+    background-image: none;
+    border-color: #1f6feb;
+}
+
+.alert-warning {
+    color: #e3b341;
+    background-color: #3b2e00;
+    background-image: none;
+    border-color: #9e6a03;
+}
+
+.alert-danger {
+    color: #ffb3ad;
+    background-color: #490202;
+    background-image: none;
+    border-color: #da3633;
+}
+
+.alert-success a,
+.alert-info a,
+.alert-warning a,
+.alert-danger a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.close {
+    color: #f0f6fc;
+    text-shadow: none;
+}
+
+/*
+ * Keep the existing CodeMirror "elegant" theme and its metrics, but replace
+ * its light palette. This avoids changing editor geometry just to get dark mode.
+ */
+.cm-s-elegant.CodeMirror {
+    color: #c9d1d9;
+    background-color: #161b22;
+}
+
+.cm-s-elegant .CodeMirror-gutters {
+    background-color: #161b22;
+    border-right-color: #30363d;
+}
+
+.cm-s-elegant .CodeMirror-linenumber,
+.cm-s-elegant .CodeMirror-guttermarker-subtle {
+    color: #8b949e;
+}
+
+.cm-s-elegant .CodeMirror-guttermarker {
+    color: #f0f6fc;
+}
+
+.cm-s-elegant .CodeMirror-cursor {
+    border-left-color: #f0f6fc;
+}
+
+.cm-s-elegant div.CodeMirror-selected,
+.cm-s-elegant .CodeMirror-line::selection,
+.cm-s-elegant .CodeMirror-line > span::selection,
+.cm-s-elegant .CodeMirror-line > span > span::selection,
+.cm-s-elegant .CodeMirror-line::-moz-selection,
+.cm-s-elegant .CodeMirror-line > span::-moz-selection,
+.cm-s-elegant .CodeMirror-line > span > span::-moz-selection {
+    background-color: #264f78;
+}
+
+.cm-s-elegant span.cm-number,
+.cm-s-elegant span.cm-atom {
+    color: #d2a8ff;
+}
+
+.cm-s-elegant span.cm-string,
+.cm-s-elegant span.cm-link {
+    color: #a5d6ff;
+}
+
+.cm-s-elegant span.cm-comment {
+    color: #8b949e;
+}
+
+.cm-s-elegant span.cm-meta,
+.cm-s-elegant span.cm-qualifier {
+    color: #79c0ff;
+}
+
+.cm-s-elegant span.cm-variable {
+    color: #c9d1d9;
+}
+
+.cm-s-elegant span.cm-variable-2 {
+    color: #ffa657;
+}
+
+.cm-s-elegant span.cm-keyword {
+    color: #ff7b72;
+}
+
+.cm-s-elegant span.cm-builtin {
+    color: #d2a8ff;
+}
+
+.cm-s-elegant span.cm-error {
+    color: #ffb3ad;
+    background-color: #490202;
+}
+
+.cm-s-elegant .CodeMirror-activeline-background {
+    background-color: #21262d;
+}
+
+.cm-s-elegant .CodeMirror-matchingbracket {
+    outline-color: #8b949e;
+    color: #f0f6fc !important;
+}
+
+.CodeMirror {
+    border-color: #30363d;
+}
+
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+    background-color: #161b22;
+}
+
+/* The canvas layers are transparent; provide a dark surface behind them. */
+.grid-canvas {
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+::selection {
+    color: #f0f6fc;
+    background-color: #264f78;
+}

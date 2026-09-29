@@ -14,7 +14,7 @@ define([
     'angular-local-storage',
     'angular-loading-bar',
     'angular-growl-v2',
-    'angulartics-piwik',
+    // 'angulartics-piwik',
     'rx.angular',
     'ng-showdown'
 ], (document, angular, GridCanvasDirective, GitHubService, MomentFilter, Controller, AppConfig, ExecService) => {
@@ -29,7 +29,7 @@ define([
         'LocalStorageModule',
         'angular-loading-bar',
         'angular-growl',
-        'angulartics.piwik',
+        // 'angulartics.piwik',
         'rx',
         'ng-showdown'
     ];
@@ -56,10 +56,10 @@ define([
         growlProvider.globalTimeToLive({success: 4000, error: -1, warning: 4000, info: 4000});
     });
 
-    app.config(function ($analyticsProvider) {
-        // todo track global exceptions : https://github.com/angulartics/angulartics/issues/272
-        $analyticsProvider.virtualPageviews(false);
-    });
+    // app.config(function ($analyticsProvider) {
+    //     // todo track global exceptions : https://github.com/angulartics/angulartics/issues/272
+    //     // $analyticsProvider.virtualPageviews(false);
+    // });
 
     app.directive('gridCanvas', GridCanvasDirective);
     app.factory('GitHubService', GitHubService);

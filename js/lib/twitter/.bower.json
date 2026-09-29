@@ -1,0 +1,14 @@
+{
+  "name": "twitter",
+  "_cacheHeaders": {
+    "ETag": "\"fc86e225da140471f2aaca262837df4a+gzip\"",
+    "Last-Modified": "Wed, 06 May 2026 22:59:27 GMT",
+    "Content-Length": "27731",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "_release": "e-tag:fc86e225d",
+  "main": "index.js",
+  "_source": "http://platform.twitter.com/widgets.js",
+  "_target": "*",
+  "_originalSource": "http://platform.twitter.com/widgets.js"
+}

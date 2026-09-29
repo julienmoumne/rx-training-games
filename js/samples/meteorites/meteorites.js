@@ -4,9 +4,9 @@ var firingPulse = 50;
 
 api.initGrid({squareSize: 15});
 
-var meteoriteLayer = api.addLayer({color: '#275b8c'});
-var bulletLayer = api.addLayer({color: '#9bc2e3'});
-var spaceshipLayer = api.addLayer({color: '#337ab7'});
+var meteoriteLayer = api.addLayer({color: '#a5d6ff'});
+var bulletLayer = api.addLayer({color: '#eaf6ff'});
+var spaceshipLayer = api.addLayer({color: '#c9e6ff'});
 
 // ship starting position
 spaceshipLayer.fill({x: api.randomCoord(), y: api.gameSize - 1});

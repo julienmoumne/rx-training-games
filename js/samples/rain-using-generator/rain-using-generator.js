@@ -3,7 +3,7 @@ var fallPulse = 100;
 
 api.initGrid({squareSize: 6});
 
-var layer = api.addLayer({color: '#337ab7'});
+var layer = api.addLayer({color: '#c9e6ff'});
 
 var coordinates = (function* () {
     var coord = {current: {x: api.randomCoord(), y: 0}};

@@ -2,7 +2,7 @@ var squareSize = 4, antPulse = 1, activatedSquares = 40;
 
 api.initGrid({squareSize: squareSize});
 
-var boardLayer = api.addLayer({color: '#337ab7'}), antLayer = api.addLayer({color: '#275b8c'});
+var boardLayer = api.addLayer({color: '#c9e6ff'}), antLayer = api.addLayer({color: '#a5d6ff'});
 
 // activate random squares
 Rx.Observable.repeat(() => boardLayer.fill(api.randomSquare()), activatedSquares).subscribe(f => f());

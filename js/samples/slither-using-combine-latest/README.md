@@ -11,9 +11,9 @@ must be used to achieve the desired effect.
 
 Marbles :
 [Full diagram](https://raw.githubusercontent.com/JulienMoumne/rx-training-games/master/js/samples/slither-using-combine-latest/slither-using-combine-latest.png),
-[SkipUntil](http://rxmarbles.com/#skipUntil),
-[CombineLatest](http://rxmarbles.com/#combineLatest),
-[DistinctUntilChanged](http://rxmarbles.com/#distinctUntilChanged)
+[SkipUntil](//rxmarbles.com/#skipUntil),
+[CombineLatest](//rxmarbles.com/#combineLatest),
+[DistinctUntilChanged](//rxmarbles.com/#distinctUntilChanged)
 
 Use the Left, Up, Right and Down arrows of your keyboard to move the snake.
 

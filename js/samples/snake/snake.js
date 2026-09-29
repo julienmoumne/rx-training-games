@@ -2,8 +2,8 @@ var snakeSpeedPulse = 60;
 
 api.initGrid({squareSize: 15});
 
-var snake = api.addLayer({color: '#337ab7'});
-var food = api.addLayer({color: '#9bc2e3'});
+var snake = api.addLayer({color: '#c9e6ff'});
+var food = api.addLayer({color: '#eaf6ff'});
 
 snake.fill({x: 1, y: 0}).fill({x: 1, y: 1}); // snake starting point
 

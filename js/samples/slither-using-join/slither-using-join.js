@@ -3,7 +3,7 @@ var snakeSpeedPulse = 50;
 api.initGrid({squareSize: 10});
 
 // spawn a snake with size 3
-var snake = api.addLayer({color: '#337ab7'});
+var snake = api.addLayer({color: '#c9e6ff'});
 snake.fill({x: 10, y: 0}).fill({x: 10, y: 1}).fill({x: 10, y: 2});
 
 var pulse = Rx.Observable.interval(snakeSpeedPulse);

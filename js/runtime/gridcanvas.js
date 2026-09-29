@@ -11,7 +11,7 @@ define(['underscore'], _ => {
 
     function attachDom(_domElement) {
         domElement = _domElement;
-        domOffsetWidth = domElement.offsetWidth;
+        getOffsetWidth();
     }
 
     function init(_squareSize) {
@@ -38,7 +38,7 @@ define(['underscore'], _ => {
     }
 
     function addTextLayer() {
-        textLayer = addCanvas(2);
+        textLayer = addCanvas(1000);
     }
 
     function getCanvasSize() {
@@ -46,6 +46,10 @@ define(['underscore'], _ => {
     }
 
     function getOffsetWidth() {
+        var currentWidth = domElement.style.width;
+        domElement.style.width = '';
+        domOffsetWidth = domElement.offsetWidth;
+        domElement.style.width = currentWidth;
         return domOffsetWidth;
     }
 
@@ -120,13 +124,13 @@ define(['underscore'], _ => {
     function setText(text) {
         var canvasSize = getCanvasSize();
         textLayer.clearRect(0, 0, canvasSize, canvasSize);
-        textLayer.font = "14px serif";
-        textLayer.fillStyle = '#337ab7';
+        textLayer.font = "18px serif";
+        textLayer.fillStyle = '#f0f6fc';
         textLayer.fillText(text, 5, 20);
     }
 
     function displayBlankCanvas() {
-        resizeDom(domOffsetWidth);
+        resizeDom(getOffsetWidth());
     }
 
     return {

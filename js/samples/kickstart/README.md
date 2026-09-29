@@ -11,8 +11,8 @@ Developing using Reactive Extensions is possible in JavaScript thanks to
 [RxJS](https://github.com/Reactive-Extensions/RxJS/tree/master/doc).
 
 Features of
-[Underscore](http://underscorejs.org/) and
-[ECMAScript 6](http://www.ecma-international.org/ecma-262/6.0/)
+[Underscore](//underscorejs.org/) and
+[ECMAScript 6](//www.ecma-international.org/ecma-262/6.0/)
 as used in the samples are suggested to make your code more concise.
 
 If you prefer coding using your own editor you can

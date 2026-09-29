@@ -3,7 +3,7 @@ var fallPulse = 100;
 
 api.initGrid({squareSize: 6});
 
-var layer = api.addLayer({color: '#337ab7'});
+var layer = api.addLayer({color: '#c9e6ff'});
 
 // droplets spawns
 Rx.Observable.interval(spawnPulse)

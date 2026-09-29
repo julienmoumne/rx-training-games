@@ -21,13 +21,15 @@ define([
                      GitHubService,
                      ExecService,
                      AppConfig,
-                     growl,
-                     $analytics) {
+                     growl
+                     // $analytics
+    ) {
 
         var localStorageKey = 'local-samples';
         var draftCategory = 'draft';
         var keyboardObservable;
         var editor;
+        var resizeTimer;
         var preventStart = $location.search().preventstart;
         var embedded = window != window.top;
         var headerSize = embedded ? 30 : 120;
@@ -38,6 +40,7 @@ define([
             initSamples();
             initScope();
             initKeyboardEvents();
+            initResizeEvents();
         })();
 
         function selectSample(requestedSample) {
@@ -64,7 +67,7 @@ define([
         }
 
         function trackPageView() {
-            $analytics.pageTrack($location.url());
+            // $analytics.pageTrack($location.url());
         }
 
         function convertSampleToLookup(sample) {
@@ -213,6 +216,48 @@ define([
             keyboardObservable = $scope.$createObservableFunction('keypress').share();
             keyboardObservable.filter(_.matcher({keyCode: 27})).subscribe(stop); // escape
             keyboardObservable.filter(_.matcher({keyCode: 13, ctrlKey: true})).subscribe(start); // ctrl + enter
+        }
+
+        function initResizeEvents() {
+
+            window.addEventListener('resize', scheduleResize, false);
+
+            if (window.visualViewport)
+                window.visualViewport.addEventListener('resize', scheduleResize, false);
+
+            $scope.$on('$destroy', () => {
+                window.removeEventListener('resize', scheduleResize, false);
+
+                if (window.visualViewport)
+                    window.visualViewport.removeEventListener('resize', scheduleResize, false);
+
+                if (resizeTimer)
+                    clearTimeout(resizeTimer);
+            });
+        }
+
+        function scheduleResize() {
+            if (resizeTimer)
+                clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(resize, 150);
+        }
+
+        function resize() {
+            editorHeight = window.innerHeight - headerSize;
+
+            if (editor) {
+                editor.display.wrapper.style.height = editorHeight + 'px';
+                editor.refresh();
+            }
+
+            if (!GridCanvas.getDomElement())
+                return;
+
+            if ($scope.on)
+                start();
+            else
+                GridCanvas.displayBlankCanvas();
         }
 
         function initSamples() {

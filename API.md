@@ -8,7 +8,7 @@ The grid is first instantiated with the size of the activable squares : `api.ini
 
 ## Layers
 
-Multiple layers with different colors can be added with `var layer = api.addLayer({color: '#337ab7'});`
+Multiple layers with different colors can be added with `var layer = api.addLayer({color: '#c9e6ff'});`
 
 A layer exposes the following methods :
 
@@ -16,7 +16,7 @@ A layer exposes the following methods :
  * `layer.clear({x: 42, y: 42});` : clear a square
  * `layer.getActiveSquares();` : retrieve a list of active squares
  
-The layer is also implemented as an Observable Collection and provides two [Observables](http://reactivex.io/documentation/observable.html) :
+The layer is also implemented as an Observable Collection and provides two [Observables](//reactivex.io/documentation/observable.html) :
  
 ```javascript
 // square activations

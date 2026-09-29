@@ -1,6 +1,6 @@
 The classical mobile game inspired by [A Playful Introduction to Rx by Erik Meijer](https://youtu.be/WKore-AkisY).
 
-The original code written in Scala can be found [on slide 4](http://ecoop14.it.uu.se/programme/Rx.pdf).
+The original code written in Scala can be found [on slide 4](//ecoop14.it.uu.se/programme/Rx.pdf).
 
 **How to play**
 

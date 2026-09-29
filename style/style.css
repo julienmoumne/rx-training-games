@@ -18,6 +18,7 @@
 
 .logo {
     vertical-align: baseline;
+    filter: invert(1) hue-rotate(180deg);
 }
 
 .logo-sm img {

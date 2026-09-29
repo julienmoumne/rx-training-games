@@ -11,7 +11,7 @@
 
 api.initGrid({squareSize: 15});
 
-var layer = api.addLayer({color: '#337ab7'});
+var layer = api.addLayer({color: '#c9e6ff'});
 
 layer.fill(api.randomSquare());
 
