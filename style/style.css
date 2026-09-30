@@ -56,3 +56,12 @@ div:focus{
 .nav > li > a {
     padding: 10px 5px;
 }
+
+.embedded-row {
+    --embedded-top-padding: 12px;
+    padding-top: var(--embedded-top-padding);
+}
+
+.embedded-row .CodeMirror {
+    height: calc(100vh - 30px - var(--embedded-top-padding)) !important;
+}

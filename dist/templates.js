@@ -196,7 +196,7 @@ angular.module('rx-training-games.templates', [])
     '        <ng-include src="\'html/title.html\'"></ng-include>\n' +
     '    </span>\n' +
     '\n' +
-    '    <div class="row">\n' +
+    '    <div class="row" ng-class="{\'embedded-row\': embedded}">\n' +
     '\n' +
     '        <div class="{{embedded ? \'hidden\' : \'col-md-3\'}}">\n' +
     '\n' +
